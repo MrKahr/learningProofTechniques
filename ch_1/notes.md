@@ -25,6 +25,7 @@ A statment can be well-formed if it does not violate the syntax of mathematical 
 ## Logical properties
 Validity: Whenever all premises are true, the conclusion must be true. - Valid, but not sound. Think syntactically valid. 
 Soundness: A conclusion is sound if it is valid and all of its premises are true in the real world. Think syntactically and semantically valid. 
+Completeness: TODO: DEFINE!
 
 "All birds can fly, penguins are birds, therefore penguins can fly" is valid, but not sound.\\
 "2 < 3. Therefore 3 is an integer." Invalid (and since sound is the stronger condition, unsound)\\
