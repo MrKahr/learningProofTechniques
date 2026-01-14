@@ -58,10 +58,15 @@ Let T = Taxes will go up, D = The deficit will go up.
 - c) Either taxes will go up and the deficient goes down or the deficiet goes up and taxes go down. 
 
 ## 1.1.9
+A hint to building these tables is to "flip" truth values like you would in binary counting!
+ALSO, truth is not the same as either soundness or validity!
+
+### A 
 P = Jane will win the math prize, Q = Jane will win the chemestry prize, R = Pete will win the math prize, T = Pete will win the chemestry prize. 
 To solve this problem, consider all possible combinations of true premises. IF the conclusion is ever false, while the premises are true, then it cannot a correct conclusion. 
-- a) $\neg (P \land R), (P \lor R),  Q, R$
-| P | Q | R | ¬(P ∧ R) | (P ∨ R) | Q | R |
+- PREMISES: $\neg (P \land R), (P \lor R),Q$,  CONCLUSION: $R$
+
+| P | Q | R | $P \land R$ | $P \lor R$ | Q | R |
 |---|---|---|-----------|----------|---|---|
 | T | T | T | F | T | T | T |
 | T | T | F | T | T | T | F |
@@ -74,3 +79,42 @@ To solve this problem, consider all possible combinations of true premises. IF t
 
 Row 2: Premises are true without the conclusion being true -> The argument is not valid!
 
+### B
+P = The main course will be fish, Q = The main course will be beef, R = The vegetable will be peas, T = The vegetable will be corn
+PREMISES: $P \lor Q$, $R \lor T$ CONCLUSION: $Q \land R$ - Please note that the logical expressions are NOT modelled as exclusive or, but this interpretation does make sense; you can't have both the fish and the meat at the same time!
+| P  | Q | R | T |  $P \lor Q$ | $R \lor T$ |$\neg(P \land T)$  |$\neg(Q \land R)$ 
+| ---|---|---|---|-------------|------------|-------------------| -----------------|
+| F  | F | F | F | F           | F          | T                 | T              |
+| F  | F | F | T | F           | T          | T                 | T              |
+| F  | F | T | F | F           | T          | T                 | T              |
+| F  | F | T | T | F           | T          | T                 | T              |
+| F  | T | F | F | T           | F          | T                 | T              |
+| F  | T | F | T | T           | T          | T                 | T              |
+| F  | T | T | F | T           | T          | T                 | F              | 
+| F  | T | T | T | T           | T          | T                 | F              |
+| T  | F | F | F | T           | F          | T                 | T              |
+¦ T  | F | F | T | T           | T          | F                 | T              |
+¦ T  | F | T | F | T           | T          | T                 | T              | 
+| T  | F | T | T | T           | T          | F                 | T              |
+| T  | T | F | F | T           | F          | T                 | T              |
+| T  | T | F | T | T           | T          | F                 | T              |
+| T  | T | T | F | T           | T          | T                 | F              |
+| T  | T | T | T | T           | T          | F                 | F              | 
+This argument is not valid, see line 93!
+
+### C
+P = John is telling the truth, Q = Bill is telling the truth, R = Sam is telling the truth
+- c) PREMISES: $(P \lor Q), (\neg P \lor \neg R)$, CONCLUSION: $(P \lor \neg R)$ 
+| P | Q | R |$(P \lor Q)$ | $(\neg P \lor \neg R)$ | $(P \lor \neg R)$ | 
+| F | F | F | F           | T                      | T 
+| F | F | T | F           | T                      | F 
+| F | T | F | T           | T                      | T
+| F | T | T | T           | T                      | F
+| T | F | F | T           | T                      | T
+| T | F | T | T           | F                      | T
+| T | T | F | T           | T                      | T
+| T | T | T | T           | F                      | T
+This argument is not valid! See line 112!
+
+P = sales will go up, Q = boss will be happy, R = expenses will go up 
+- d) PREMSISES: $(P \land Q), (R \land \neg Q)$ CONCLUSION: $\neg(P \land R)$, rest of the truth table left as exercise. 
