@@ -118,3 +118,39 @@ This argument is not valid! See line 112!
 
 P = sales will go up, Q = boss will be happy, R = expenses will go up 
 - d) PREMSISES: $(P \land Q), (R \land \neg Q)$ CONCLUSION: $\neg(P \land R)$, rest of the truth table left as exercise. 
+
+## 1.2.1
+
+## 1.2.2
+
+## 1.2.3
+
+## 1.2.4
+
+## 1.2.5 
+
+## 1.2.6
+
+## 1.2.7
+
+## 1.2.8
+
+## 1.2.9
+
+## 1.2.10
+
+## 1.2.11
+
+## 1.2.12
+
+## 1.2.13
+
+## 1.2.14
+
+## 1.2.15
+
+## 1.2.16
+
+## 1.2.17
+
+## 1.2.18
