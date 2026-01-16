@@ -6,7 +6,7 @@ Note also, terminology in logic can be very confusing because there are so many 
 ### Proposition
 A proposition is a declarative senetence that is either true or false. 
 
-Propositions may either be atomic (simple), or compound (be built from subpropositions using logical connectives).
+Propositions may either be atomic (also known as simple), or molecular (also know as compound) (be built from subpropositions using logical connectives).
 
 In formal logic, we represent propositions using logical formulae i.e. the syntax. 
 

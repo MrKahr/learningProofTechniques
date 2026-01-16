@@ -120,6 +120,21 @@ P = sales will go up, Q = boss will be happy, R = expenses will go up
 - d) PREMSISES: $(P \land Q), (R \land \neg Q)$ CONCLUSION: $\neg(P \land R)$, rest of the truth table left as exercise. 
 
 ## 1.2.1
+In the truth table exercises, it is sometimes easier to create a dummy boolean variable whose assigned truth value is identical to that of a compound formula. 
+### A
+| P | Q | $\neg P \lor Q$ | 
+| F | F | T               | 
+| F | T | T               |
+| T | F | F               | 
+| T | T | T               |
+
+### B 
+| S | G | $S \lor G$ = A | $\neg S \lor \neg G$ = B | $A \land B$ | 
+| F | F | F              |  T                       | F   
+| F | T | T              |  T                       | T 
+| T | F | T              |  T                       | T 
+| T | T | T              |  F                       | F 
+That's equivalent to xor - exactly one atomic propositon is true in the molecular proposition!
 
 ## 1.2.2
 
