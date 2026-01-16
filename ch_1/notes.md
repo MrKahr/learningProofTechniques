@@ -48,7 +48,7 @@ A process of deriving conclusions from premises which may incldue axioms(atomic 
 "Bob can stand. Storks can stand. Therefore Bob is a stork."(Valid, but unsound, it is never possible for bob to be a stork)
 
 ### Propositonal logic/zeroth order
-Formal system to reason about propositions using logical connectives ($\lor, \land, \neg, \doublearrow \arrow$). $n > 2$ is an example of a claim that is NOT a propositon.
+Formal system to reason about propositions using logical connectives ($\lor, \land, \neg, \leftrightarrow \rightarrow$). $n > 2$ is an example of a claim that is NOT a propositon.
 
 ### Predicate logic/first order logic 
 Formal system to reason about propositions, and members of a domain using both logical connectives, and quantifiers.
@@ -68,7 +68,7 @@ Formal system to reason about the nth layer of abstraction e.g. sets of sets of 
 A variable S that is assigned either true or false.
 
 ### Truth assignment
-A truth assignment for a set $S$ of propositions variables is a function $f: S -> \{T,F\\}$(https://www.ucl.ac.uk/~ucahmto/0005_2021/Ch1.S3.html)
+A truth assignment for a set $S$ of propositional variables is a function $f: S -> \{T,F\}$ (https://www.ucl.ac.uk/~ucahmto/0005_2021/Ch1.S3.html) - One representation of S could be S = {Q, R}
 
 ### Logical formula
 An mathematical expression used to represent a proposition. 
@@ -90,12 +90,12 @@ A formula can be well-formed if it does not violate the syntax of propositional 
 A truth assignment f is a function of statement s to a truth value $T \in {T, F}$. One formalism $f : S \rightarrow T$. 
 
 ## Equivalence 
-We say that formulae $s$ and $p$ are equivalent iff they are assigned the same truth value for every combination of truth values to the . We denote this $s \equiv p$. 
+We say that formulae $s$ and $p$ are equivalent iff they are assigned the same truth value for every combination of truth assignment to their atmoic variables. We denote this $s \equiv p$. 
 
 ## Truth table 
-A tabl
+A truth table is a representation of the boolean assignment function $f$, for some logical formula. It depicts all combinations of assignments to atomic propostional variables and the corresponding truth value assigned to compound formulae as a result of this assignment.  
 
-## Important results
+## Important results and properties
 ### Propositional logic law (0'th order)
 $
 \\
@@ -103,17 +103,33 @@ $
 \neg (P \lor V) \equiv \neg P \land \neg Q (DeMorgan)\\
 P \land Q \equiv Q \land P(Commutativity) - Swapping position of operands is allowed \\
 P \lor Q \equiv Q \lor P(Commutativity) \\
-P \land (Q \land R) \equiv (P \land Q) \land R (Associativity) - Grouping operands differently is allowed, parenthesis is redundant, (but occasionally helpful!)\\
+P \land (Q \land R) \equiv (P \land Q) \land R (Associativity) - Grouping same operands differently is allowed = parenthesis is redundant\\
 P \lor (Q \lor R) \equiv (P \lor Q) \lor R (Associativity)\\
 P \land P \equiv P (Idempotency) - Performing the same operation multiple times yields the same result\\
 P \lor P \equiv P (Idempotency)\\
+P \land (Q \lor R) \equiv (P \land Q) \lor (P \land R)(Distributivity)\\
+P \lor (Q \and R) \equiv (P \lor Q) \land (P \lor R)\\
+P \lor (P \land Q) \equiv P(Absorption)\\
+P \land (P \lor Q) \equiv P\\
 \neg \neg P \equiv P (Double negation)
 $ 
 
-These laws can be verified by using truth tables - skipped because completed previously. 
+These laws can be verified by using truth tables - skipped for laws completed previously.
+| P | Q | R | $P \land (Q \lor R)$ |  $(P \land Q) \lor (P \land R)$ | 
+| F | F | T | F                    | F                               |
+| F | T | F | F                    | F                               |
+| F | T | T | F                    | F                               |
+| T | F | F | F                    | F                               |
+| T | F | T | T                    | T                               |
+| T | T | F | T                    | T                               |
+| T | T | T | T                    | T                               |
+
+
 
 ### Key points
 You CANNOT infer that a conclusion is true simply because its premises are (p. 19) -> always check conclusions carefully
 
 Validity determines whether a conclusion follows from premises - i.e. whether there is even some pattern to exploit, not whether it makes sense to exploit it! - In all possible worlds.
+
+There are two kinds of variables, one numeric (e.g. x) and one boolean (e.g. S,Q). 
 
