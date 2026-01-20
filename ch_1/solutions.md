@@ -82,6 +82,7 @@ Row 2: Premises are true without the conclusion being true -> The argument is no
 ### B
 P = The main course will be fish, Q = The main course will be beef, R = The vegetable will be peas, T = The vegetable will be corn
 PREMISES: $P \lor Q$, $R \lor T$ CONCLUSION: $Q \land R$ - Please note that the logical expressions are NOT modelled as exclusive or, but this interpretation does make sense; you can't have both the fish and the meat at the same time!
+
 | P  | Q | R | T |  $P \lor Q$ | $R \lor T$ |$\neg(P \land T)$  |$\neg(Q \land R)$ 
 | ---|---|---|---|-------------|------------|-------------------| -----------------|
 | F  | F | F | F | F           | F          | T                 | T              |
@@ -105,15 +106,17 @@ This argument is not valid, see line 93!
 ### C
 P = John is telling the truth, Q = Bill is telling the truth, R = Sam is telling the truth
 - c) PREMISES: $(P \lor Q), (\neg P \lor \neg R)$, CONCLUSION: $(P \lor \neg R)$ 
+
 | P | Q | R |$(P \lor Q)$ | $(\neg P \lor \neg R)$ | $(P \lor \neg R)$ | 
-| F | F | F | F           | T                      | T 
-| F | F | T | F           | T                      | F 
-| F | T | F | T           | T                      | T
-| F | T | T | T           | T                      | F
-| T | F | F | T           | T                      | T
-| T | F | T | T           | F                      | T
-| T | T | F | T           | T                      | T
-| T | T | T | T           | F                      | T
+|---|---|---|-------------|------------------------|-------------------|
+| F | F | F | F           | T                      | T                 |
+| F | F | T | F           | T                      | F                 |
+| F | T | F | T           | T                      | T                 |
+| F | T | T | T           | T                      | F                 | 
+| T | F | F | T           | T                      | T                 |
+| T | F | T | T           | F                      | T                 |
+| T | T | F | T           | T                      | T                 |
+| T | T | T | T           | F                      | T                 |
 This argument is not valid! See line 112!
 
 P = sales will go up, Q = boss will be happy, R = expenses will go up 
@@ -123,6 +126,7 @@ P = sales will go up, Q = boss will be happy, R = expenses will go up
 In the truth table exercises, it is sometimes easier to create a dummy boolean variable whose assigned truth value is identical to that of a compound formula. 
 ### A
 | P | Q | $\neg P \lor Q$ | 
+|---|---|-----------------|
 | F | F | T               | 
 | F | T | T               |
 | T | F | F               | 
@@ -130,21 +134,107 @@ In the truth table exercises, it is sometimes easier to create a dummy boolean v
 
 ### B 
 | S | G | $S \lor G$ = A | $\neg S \lor \neg G$ = B | $A \land B$ | 
-| F | F | F              |  T                       | F   
-| F | T | T              |  T                       | T 
-| T | F | T              |  T                       | T 
-| T | T | T              |  F                       | F 
+|---|---|----------------|--------------------------|-------------|
+| F | F | F              |  T                       | F           |
+| F | T | T              |  T                       | T           |
+| T | F | T              |  T                       | T           |
+| T | T | T              |  F                       | F           |
 That's equivalent to xor - exactly one atomic propositon is true in the molecular proposition!
 
 ## 1.2.2
+### A 
+| P | Q | $Q \lor \neg P$ | $\neg (P \land (Q \lor \neg P)) | 
+|---|---|-----------------|-------------------------------|
+| F | F | T               | T                             | 
+| F | T | T               | T                             |
+| T | F | F               | T                             |
+| T | T | T               | F                             |
+
+### B 
+| P | Q | R | $P \lor Q$ | $\neg P \lor R$ | $(P \lor Q) \land (\neg P \lor R)$|
+|---|---|---|------------|-----------------|-----------------------------------|
+| F | F | F | F          | T               | F                                 |
+| F | F | T | F          | T               | F                                 | 
+| F | T | F | T          | T               | T                                 |
+| F | T | T | T          | T               | T                                 |
+| T | F | F | T          | F               | F                                 |
+| T | F | T | T          | T               | T                                 |
+| T | T | F | T          | F               | F                                 |
+| T | T | T | T          | T               | T                                 |
+
 
 ## 1.2.3
+### A 
+| P | Q | P + Q |
+|---|---|-------|
+| F | F | F     |
+| F | T | T     |
+| T | F | T     |
+| T | T | F     |
+
+### B
+We saw one of these expressions in [2.1.1](/ch_1/solutions.md#2.1.1), but we shall see if we cannot simplify the expression a bit!
+| P | Q | $\neg(Q \land P) \land (P \lor Q)$ | $(\neg Q \lor \neg P) \land (P \lor Q)$ |  
+|---|---|------------------------------------|-----------------------------------------|
+| F | F | F                                  | F                                       |
+| F | T | T                                  | T                                       |
+| T | F | T                                  | T                                       |
+| T | T | F                                  | F                                       |
 
 ## 1.2.4
+Use of deMorgan to simplify - deMorgan is extremely useful!
+| P | Q | $P \lor Q$ | $\neg(\neg P \land \neg Q)$  |
+|---|---|------------|------------------------------|
+| F | F | F          | F                            |
+| F | T | T          | T                            |
+| T | F | T          | T                            |
+| T | T | T          | T                            |
 
 ## 1.2.5 
+### A 
+Creating the nor expression
+| P | Q | $P \downarrow Q$ |
+|---|---|------------------| 
+| F | F | T                |
+| F | T | F                |
+| T | F | F                |
+| T | T | F                |
+
+### B 
+Essentially, what we are training here is finding equivalent expressions, and normal forms which are easier for the computer to compute (conjunctions can be short circuited)
+| P | Q | $P \downarrow Q$ | $\neg (P \lor Q)$|
+|---|---|------------------|------------------|
+| F | F | T                | T                |
+| F | T | F                | F                |
+| T | F | F                | F                |
+| T | T | F                | F                |
+
+### C
+| P | Q | $P \lor Q$       | $(P \downarrow Q) \downarrow (P \downarrow Q)$      | $P \land Q$|$(P \downarrow P) \downarrow (Q \downarrow Q)$ | $\neg P$  | $P \downarrow P$|
+|---|---|------------------|-----------------------------------------------------|------------|-----------------------------------------------|-----------|-----------------|
+| F | F | F                | F                                                   | F          | F                                             | T         | T               | 
+| F | T | T                | T                                                   | F          | F                                             | T         | T               |             
+| T | F | T                | T                                                   | F          | F                                             | F         | F               |              
+| T | T | T                | T                                                   | T          | T                                             | F         | F               |               
 
 ## 1.2.6
+### A 
+| P | Q | $(P | Q)$ (nand) |
+|---|---|------------------|
+| F | F | T                |
+| F | T | T                |
+| T | F | T                |
+| T | T | F                |
+
+### B 
+| P | Q | $(P|Q)$| $\neg (P \land Q)$|
+|---|---|--------|-------------------|
+| F | F | T      | T                 |
+| F | T | T      | T                 |
+| T | F | T      | T                 |
+| T | T | F      | F                 |
+
+### C 
 
 ## 1.2.7
 
