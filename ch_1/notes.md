@@ -111,7 +111,9 @@ P \land (Q \lor R) \equiv (P \land Q) \lor (P \land R)(Distributivity)\\
 P \lor (Q \and R) \equiv (P \lor Q) \land (P \lor R)\\
 P \lor (P \land Q) \equiv P(Absorption)\\
 P \land (P \lor Q) \equiv P\\
-\neg \neg P \equiv P (Double negation)
+\neg \neg P \equiv P (Double negation)\\
+P \land tautology \equiv P, P \lor tautology \equiv tautology, \neg (tautology) \equiv contradiction (tautology laws)\\
+P \land contradiction \equiv contradiction, P \lor contradiction \euqiv P, \neg(contradiction) \equiv tautology (contradiction laws)
 $ 
 
 These laws can be verified by using truth tables - skipped for laws completed previously.

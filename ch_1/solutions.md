@@ -23,7 +23,7 @@ b) P = I'll have fish, Q = I'll have chicken, R = I'll have mashed potatoes
 c) P = 3 is a common divisor of 6, Q = ($\dots$) 9, R = ($\dots$) 15 
 - $P \land Q \land R$
 
-## 1.1.3
+## 1.1.)3
 A = Alice is in the room, B = Bob is in the room 
 - a) $\neg (A \land B)$ 
 - b) $\neg A \land \neg B$
@@ -217,7 +217,7 @@ Essentially, what we are training here is finding equivalent expressions, and no
 | T | F | T                | T                                                   | F          | F                                             | F         | F               |              
 | T | T | T                | T                                                   | T          | T                                             | F         | F               |               
 
-## 1.2.6
+## 1.2.6 - TODO: fix table bug here
 ### A 
 | P | Q | $(P | Q)$ (nand) |
 |---|---|------------------|
@@ -234,17 +234,63 @@ Essentially, what we are training here is finding equivalent expressions, and no
 | T | F | T      | T                 |
 | T | T | F      | F                 |
 
-### C 
-
+### C *****
+| P | Q | $\neg P$ | $(P | P)$ | $P \lor Q$ | $(P | Q) | P$ | $$ | $$ | 
+| F | F | T        | T         | F          |
+| F | T | T        | T         | T          |
+| T | F | F        | F         | T          |
+| T | T | F        | F         | T          |
 ## 1.2.7
+Already completed, see [1.1.9](/ch_1/solutions.md#1.1.9). 
 
 ## 1.2.8
+| P | Q | $(P \land Q) \lor (\neg P \land \neg Q)$| $\neg P \lor Q$    | $(P \lor \neg Q) \land (Q \lor \neg P)$ | $\neg(P \lor Q)$ | $(Q \land P) \lor \neg P$ |
+|---|---|-----------------------------------------|--------------------|-----------------------------------------|------------------|---------------------------|
+| F | F | T                                       | T                  | T                                       | T                | T                         |
+| F | T | F                                       | T                  | F                                       | F                | T                         |               
+| T | F | F                                       | F                  | F                                       | F                | F                         |
+| T | T | T                                       | T                  | T                                       | F                | T                         |
+Remember that propositions are equivalent if their truth value assignment is identical. 
+
+Using this truth table, we conclude that: 
+- a), c) are equivalent
+- b), e) are equivalent
+- d) is not equivalent to any proposition.
+
 
 ## 1.2.9
+| P | Q | R | $(P \lor Q) \land (\neg P \lor \neg Q)$ | $(P \lor Q) \land (\neg P \land \neg Q)$ |  $(P \lor Q) \lor (\neg P \lor \neg Q)$ | $(P \land (Q \lor \neg R)) \lor (\neg P \lor R)$ |
+|---|---|---|-----------------------------------------|------------------------------------------|-----------------------------------------|--------------------------------------------------|
+| F | F | F | F                                       | F                                        | T                                       | T                                                |   
+| F | F | T | F                                       | F                                        | T                                       | T                                                |
+| F | T | F | T                                       | F                                        | T                                       | T                                                |
+| F | T | T | T                                       | F                                        | T                                       | T                                                |
+| T | F | F | T                                       | F                                        | T                                       | T                                                |
+| T | F | T | T                                       | F                                        | T                                       | T                                                |
+| T | T | F | F                                       | F                                        | T                                       | T                                                |
+| T | T | T | F                                       | F                                        | T                                       | T                                                |
+
+Using this truth table, we can determine the following results about propostions a), b), c), d)
+- a) Is neither a tautology nor a contradiction.  
+- b) Is a contradiction 
+- c) Is a tautology
+- d) Is a tautology 
 
 ## 1.2.10
+Left as extra exercise. 
 
 ## 1.2.11
+### A 
+$
+\neg(\neg P \land \neg Q) \equiv \neg \neg P \lor \neg \neg Q (\text{DeMorgan})\\
+\equiv P \land Q (\text{Double negation law})
+$
+
+### B 
+$
+(P \land Q) \lor (P \land \neg Q) \equiv P \land (Q \lor \neg Q) (\text{Distributive law})\\
+\equiv P (\text(Tautology law))
+$
 
 ## 1.2.12
 
