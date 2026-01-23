@@ -9,3 +9,6 @@
 ## The following logical properties are interesting - you might want to consider those: 
 - Validity
 - Soundness
+
+## Logic insights
+- There are many different kinds of logics that are supersets of each other - it works similarly to problem classes in comp. sci. e.g. NP, NP-hard, NP-complete etc.
