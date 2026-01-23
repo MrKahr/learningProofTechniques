@@ -323,6 +323,11 @@ $
 ### C 
 $
 (P \land R) \lor [\neg R \land (P \lor Q)]\\
+(P \land R) \lor [((\neg R \land P) \lor (\neg R \land Q))] (\text{Distributive law})\\
+(P \land R) \lor [(P \land \neg R) \lor (Q \land \neg R)] (\text{Commutative law}) \\
+[(P \land R) \lor (P \land \neg R)] \lor (Q \land \neg R) (\text{Associative law})\\
+[P \land (R \lor \neg R)] \lor (Q \land \neg R) (\text{Distributive law})\\
+[P] \lor (Q \and \neg R) (\text{Tautology laws})
 $
 
 ## 1.2.13
@@ -366,9 +371,10 @@ This is known as the law of double negation.
 **Derivation** 
 Let P, Q be propositions. 
 Then
+
 $
 \neg (P \lor Q) \equiv \neg (\neg \neg P \lor \neg \neg Q) (\text{double negation law})\\
-\equiv \neg \neg (\neg P \and \neg Q) (\text{DeMorgan's first law})\\
+\equiv \neg \neg (\neg P \land \neg Q) (\text{DeMorgan's first law})\\
 \equiv (\neg P \land \neg Q) (\text{double negation law})\\
 $
 The last derivation allows us to conclude that 
@@ -430,6 +436,30 @@ This is exactly the definition of DeMorgan's second law.
 Therefore we conclude that De Morgan's second law is derivable using De Morgan's first law and the law of double negation. 
 
 ## 1.2.14
+The goal of this exercise is to show that $[P \land (Q \land R)] \land S \equiv (P \land Q) \land (R \land Q)$ using only associative laws. 
+
+### Preliminaries
+We first define associative laws. 
+
+**Associative laws** 
+For propositions, P,Q, 
+$
+P \land (Q \land R) \equiv (P \land Q) \land R\\
+P \lor (Q \lor R) \equiv (P \lor Q) \lor R
+$
+
+
+### Derivation 
+Using the associative laws we present the proposed derivation. (in case your reader tends to forget!) 
+
+Let P,Q,R,S be propositions. 
+
+Then 
+$
+[P \land (Q \land R)] \land S \equiv [(P \land Q) \land R] \land S (\text{Associative law})\\
+\equiv (P \land R) \land (R \land S) (\text{Associative law})
+$
+Therefore, we can conclude that $[P \land (Q \land R)] \land S \equiv (P \land Q) \land (R \land Q)$. 
 
 ## 1.2.15
 Let n represent the number of propositional variables in a table T with $n \in \mathbb{N}$. 
@@ -471,6 +501,5 @@ If one of the premises is a tautology, we cannot conclude anyhthing about the va
 If one of the premises is a contradiction, it is never the case that all premsises are true. Therefore, the argument is vacously valid. 
 
 
-NOT DONE YET:  
-- 1.2.12 - C
+NOT DONE YET:
 - 1.2.14 
