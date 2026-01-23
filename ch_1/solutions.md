@@ -234,12 +234,14 @@ Essentially, what we are training here is finding equivalent expressions, and no
 | T | F | T      | T                 |
 | T | T | F      | F                 |
 
-### C *****
-| P | Q | $\neg P$ | $(P | P)$ | $P \lor Q$ | $(P | Q) | P$ | $$ | $$ | 
-| F | F | T        | T         | F          |
-| F | T | T        | T         | T          |
-| T | F | F        | F         | T          |
-| T | T | F        | F         | T          |
+### C
+| P | Q | $\neg P$ | $(P | P)$ | $P \lor Q$ | $(P | P) | (Q | Q)$ | $P \land Q$ | $(P | Q) | (P | Q)$ |
+|---|---|----------|-----------|------------|---------------------|-------------|---------------------|   
+| F | F | T        | T         | F          | F                   | F           | F                   |
+| F | T | T        | T         | T          | T                   | F           | F                   |
+| T | F | F        | F         | T          | T                   | F           | F                   |
+| T | T | F        | F         | T          | T                   | T           | T                   |
+
 ## 1.2.7
 Already completed, see [1.1.9](/ch_1/solutions.md#1.1.9). 
 
@@ -289,19 +291,186 @@ $
 ### B 
 $
 (P \land Q) \lor (P \land \neg Q) \equiv P \land (Q \lor \neg Q) (\text{Distributive law})\\
-\equiv P (\text(Tautology law))
+\equiv P (\text{Tautology law})
 $
 
+### C 
+$
+\neg (P \land \neg Q) \lor (\neg P \land Q) \equiv (\neg P \lor \neg \neg Q) \lor (\neg P \land Q) (\text{DeMorgan})\\
+\equiv (\neg P \lor Q) \lor (\neg P \land Q) \text{Double negation law}\\
+\equiv \neg P \lor (Q \lor (\neg P \land Q)) (\text{associative law})\\
+\equiv \neg P \lor (Q \lor (Q \land \neg P)) (\text{commutative law})\\
+\equiv \neg P \lor Q (\text{absorption law}) 
+$
+Remember that these are LAWs not suggestions, if propositons are not on this exact form, the laws CANNOT be applied (especially relevant with the absorption law)
+
 ## 1.2.12
+### A 
+$
+\neg (\neg P \lor Q) \lor (P \land \neg R) \equiv (P \land \neg Q) \lor (P \land \neg R) (\text{DeMorgan + Double negation law})\\
+\equiv P \land (\neg Q \lor \neg R) \text{Distributive law} \\
+\equiv P \land \neg(Q \land R) \text{DeMorgan} 
+$
+
+### B 
+$
+\neg(\neg P \land Q) \lor (P \land \neg R) \equiv (P \lor \neg Q) \lor (P \land \neg R) (\text{DeMorgan + Double negation law})\\
+\equiv (\neg Q \lor P ) \lor (P \land \neg R) (\text{Commutative law})\\
+\equiv \neg Q \lor (P \lor (P \land \neg R)) (\text{Associative law})\\
+\equiv \neg Q \lor P (\text{Absorption law})
+$
+
+### C 
+$
+(P \land R) \lor [\neg R \land (P \lor Q)]\\
+$
 
 ## 1.2.13
+### FIRST ATTEMPT - this is for you to see some progress in your proof making
+We show that the result for propositions, P, Q
+
+$
+\neg (P \lor Q) \equiv (\neg P \land \neg Q)
+$
+Know as DeMorgan's second law, is derivable using DeMorgan's first law and the law of double negation. 
+
+### Preliminaries
+
+**De Morgan's first law** 
+
+For any P,Q, De Morgan's first law states that the negation of the conjunction of P and Q is logically equivalent to the disjunction of the negation of P and the negation of Q. 
+
+$
+\neg(P \land Q) \equiv \neg P \lor \neg Q
+$
+
+NOTE: Here is a shorter more precise wording of the same law. 
+For any propositions, P,Q, 
+
+$
+\neg(P \land Q) \equiv \neg P \lor \neg Q
+$
+
+This is known as DeMorgan's first law. 
+
+**The law of double negation** 
+
+For any proposition P, 
+
+$
+\neg \neg P \equiv P
+$
+
+This is known as the law of double negation. 
+
+**Derivation** 
+Let P, Q be propositions. 
+Then
+$
+\neg (P \lor Q) \equiv \neg (\neg \neg P \lor \neg \neg Q) (\text{double negation law})\\
+\equiv \neg \neg (\neg P \and \neg Q) (\text{DeMorgan's first law})\\
+\equiv (\neg P \land \neg Q) (\text{double negation law})\\
+$
+The last derivation allows us to conclude that 
+$
+\neg (P \lor Q) \equiv (\neg P \land \neg Q) 
+$
+This is exactly the definition of DeMorgan's second law. 
+
+### SECOND ATTEMPT 
+The goal of this exercise is to show that DeMorgan's second law is derivable using De Morgan's first law and the law of double negation. 
+
+### Preliminaries 
+We first define necessary laws. 
+
+**De Morgan's first law** 
+
+For any propositions, P,Q, 
+
+$
+\neg(P \land Q) \equiv \neg P \lor \neg Q
+$
+
+**De Morgan's second law**
+
+For any propositions, P, Q 
+
+$
+\neg (P \lor Q) \equiv (\neg P \land \neg Q)
+$
+
+**The law of double negation** 
+
+For any proposition P, 
+
+$
+\neg \neg P \equiv P
+$
+
+
+**Derivation** 
+
+We show that Morgan's second law is deivable using De Morgan's first law and the law of double negation. 
+
+Let P, Q be propositions. 
+
+Then
+
+$
+\neg (P \lor Q) \equiv \neg (\neg \neg P \lor \neg \neg Q) (\text{double negation law})\\
+\equiv \neg \neg (\neg P \land \neg Q) (\text{DeMorgan's first law})\\
+\equiv (\neg P \land \neg Q) (\text{double negation law})\\
+$
+The last dervation allows us to conclude that 
+$
+\neg (P \lor Q) \equiv (\neg P \land \neg Q) 
+$
+This is exactly the definition of DeMorgan's second law. 
+
+Therefore we conclude that De Morgan's second law is derivable using De Morgan's first law and the law of double negation. 
 
 ## 1.2.14
 
 ## 1.2.15
+Let n represent the number of propositional variables in a table T with $n \in \mathbb{N}$. 
+
+If we assume that truth assignment is an independent choice, then by the foundamental counting principle, the number of rows of T must be $2^n$.
 
 ## 1.2.16
+| P | Q | ??? |
+|---|---|-----| 
+| F | F | T   | 
+| F | T | F   |
+| T | F | T   |
+| T | T | T   |
+
+Let ??? = $P \lor \neg Q$
 
 ## 1.2.17
+| P | Q | ??? |
+|---|---|-----|
+| F | F | F   |
+| F | T | T   |
+| T | F | T   |
+| T | T | F   |
+
+Let ??? = $(\neg P \land Q) \lor (P \land \neg Q)$ 
+
 
 ## 1.2.18
+### A 
+If the conclusion of an argument is a tautology, then for any cases where the premises are true, the conclusion is true.  
+Thus, the argument is valid.  
+
+### B 
+If the conclusion of an argument is a contradiction, then there must be a least one case of all premises being true while the conclusion is false. 
+Thus, the arguement is invalid. 
+
+### C
+If one of the premises is a tautology, we cannot conclude anyhthing about the validity of an argument, though the premise is redundant. 
+If one of the premises is a contradiction, it is never the case that all premsises are true. Therefore, the argument is vacously valid. 
+
+
+NOT DONE YET:  
+- 1.2.12 - C
+- 1.2.14 
