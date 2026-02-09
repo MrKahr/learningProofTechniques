@@ -143,7 +143,7 @@ That's equivalent to xor - exactly one atomic propositon is true in the molecula
 
 ## 1.2.2
 ### A 
-| P | Q | $Q \lor \neg P$ | $\neg (P \land (Q \lor \neg P)) | 
+| P | Q | $Q \lor \neg P$ | $\neg (P \land (Q \lor \neg P))$ | 
 |---|---|-----------------|-------------------------------|
 | F | F | T               | T                             | 
 | F | T | T               | T                             |
@@ -219,7 +219,7 @@ Essentially, what we are training here is finding equivalent expressions, and no
 
 ## 1.2.6 - TODO: fix table bug here
 ### A 
-| P | Q | $(P | Q)$ (nand) |
+| P | Q | $(P \| Q)$ (nand) |
 |---|---|------------------|
 | F | F | T                |
 | F | T | T                |
@@ -227,7 +227,7 @@ Essentially, what we are training here is finding equivalent expressions, and no
 | T | T | F                |
 
 ### B 
-| P | Q | $(P|Q)$| $\neg (P \land Q)$|
+| P | Q | $(P\|Q)$| $\neg (P \land Q)$|
 |---|---|--------|-------------------|
 | F | F | T      | T                 |
 | F | T | T      | T                 |
@@ -235,7 +235,7 @@ Essentially, what we are training here is finding equivalent expressions, and no
 | T | T | F      | F                 |
 
 ### C
-| P | Q | $\neg P$ | $(P | P)$ | $P \lor Q$ | $(P | P) | (Q | Q)$ | $P \land Q$ | $(P | Q) | (P | Q)$ |
+| P | Q | $\neg P$ | $(P \| P)$ | $P \lor Q$ | $(P \| P) \| (Q \| Q)$ | $P \land Q$ | $(P \| Q) \| (P \| Q)$ |
 |---|---|----------|-----------|------------|---------------------|-------------|---------------------|   
 | F | F | T        | T         | F          | F                   | F           | F                   |
 | F | T | T        | T         | T          | T                   | F           | F                   |
@@ -327,7 +327,7 @@ $
 (P \land R) \lor [(P \land \neg R) \lor (Q \land \neg R)] (\text{Commutative law}) \\
 [(P \land R) \lor (P \land \neg R)] \lor (Q \land \neg R) (\text{Associative law})\\
 [P \land (R \lor \neg R)] \lor (Q \land \neg R) (\text{Distributive law})\\
-[P] \lor (Q \and \neg R) (\text{Tautology laws})
+[P] \lor (Q \land \neg R) (\text{Tautology laws})
 $
 
 ## 1.2.13
@@ -444,6 +444,7 @@ We first define associative laws.
 **Associative laws** 
 For propositions, P,Q, 
 $
+\\
 P \land (Q \land R) \equiv (P \land Q) \land R\\
 P \lor (Q \lor R) \equiv (P \lor Q) \lor R
 $
@@ -456,9 +457,11 @@ Let P,Q,R,S be propositions.
 
 Then 
 $
+\\
 [P \land (Q \land R)] \land S \equiv [(P \land Q) \land R] \land S (\text{Associative law})\\
 \equiv (P \land R) \land (R \land S) (\text{Associative law})
 $
+
 Therefore, we can conclude that $[P \land (Q \land R)] \land S \equiv (P \land Q) \land (R \land Q)$. 
 
 ## 1.2.15
@@ -499,7 +502,3 @@ Thus, the arguement is invalid.
 ### C
 If one of the premises is a tautology, we cannot conclude anyhthing about the validity of an argument, though the premise is redundant. 
 If one of the premises is a contradiction, it is never the case that all premsises are true. Therefore, the argument is vacously valid. 
-
-
-NOT DONE YET:
-- 1.2.14 
