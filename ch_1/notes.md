@@ -126,7 +126,37 @@ These laws can be verified by using truth tables - skipped for laws completed pr
 | T | T | F | T                    | T                               |
 | T | T | T | T                    | T                               |
 
+### Variable 
+A variable is a symbolic represention for a number and can be used in predicates e.g. P(x) or D(x,y). Statements that contain variables can be combined using logical connectives e.g. $D(x,y) \lor D(x,z)$. 
 
+### Free and bound variables
+Free variables are objects that a statement says something about and can change the truth value of a statement depending on choice of variable. Bound or dummy variables help express an idea about a set and should not be thought of as any particular object. Bound variables can always be replaced without changing the meaning of a statement. 
+
+## Set theory 
+### A set 
+A set is a collection of objects. Each of these objects is refered to as an element of the set.
+It is either the case that an element belongs to a set $\in$ or  it does not $\notin$ which is determined by some elementhood test e.g. x is a prime. 
+
+### Set builder notation 
+A set is often represented using set builder notation in the form $A = {x | x is a prime}$. 
+This notation is read: "The set A consists of elements such that these elements are prime numbers", where the latter statement is the elementhood test. s
+
+### The truth set of a statement
+The truth set of statement P(x) is the set of all values of x that make the predicate P(x) true. In set builder notation this would be $T = {x | P(x)}
+
+### Universe 
+The set of all possible values for variables. This is refered to as the universe of discourse and sometime not explicitly defined. 
+Some common universes include $\fancy{R}, \francy{Q}$¨
+
+### Truth sets and universe of discourse 
+If you have a tautological statement using predicates, then for the truth set T, $T = U$ with U being the universe of discourse. 
+
+### Operations on sets 
+#### Set intersection 
+
+#### Set Union 
+
+#### Set difference 
 
 ### Key points
 You CANNOT infer that a conclusion is true simply because its premises are (p. 19) -> always check conclusions carefully
