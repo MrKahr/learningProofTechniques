@@ -502,3 +502,42 @@ Thus, the arguement is invalid.
 ### C
 If one of the premises is a tautology, we cannot conclude anyhthing about the validity of an argument, though the premise is redundant. 
 If one of the premises is a contradiction, it is never the case that all premsises are true. Therefore, the argument is vacously valid. 
+
+## 1.3.1
+- a) $D(6,3) \land D(9,3) \land D(15,3)$ 
+- b) $D(x,2) \land D(x,3) \land \neg D(x,4)$
+- c)$N(x) \land N(y) \land [(P(x) \land \neg P(y)) \lor (\neg P(x) \land P(y))]$ - could also use xor operator 
+## 1.3.2
+- a) $M(x) \land M(y) \land (T(x,y) \lor T(y,x))$ 
+- b) $(B(x) \lor B(y)) \land (R(x) \lor R(y))$
+- c) $(B(x) \land R(x)) \lor (B(y) \lor R(y))$
+## 1.3.3
+- a) $\{x | x is a planet in our solarsystem\}$
+- b) $\{x | x is an ivy league uni\}$
+- c) $\{x | x is a US state\}$
+- d) $\{x | x is a province in Canada\}$
+## 1.3.4
+- a) $\{x | x \in Z^{+} \land y^2 = x\}$
+- b) $\{x | x = 2^y where y \in Z^+}$
+- c) $\{x | x \in Z \land x > 9 \land x < 20\}$
+## 1.3.5
+- a) $3 \in R \land 13 -2(3) > 1$ - true -  Bound variables: x 
+- b) $4 \in R^- \land 13 -2(4) > 1$ - false(first term of conjunction falses) - Bound variables: x
+- c) $5 \notin R \land 13 - 2(5) > c$ - false(first term of conjunction false)-  Bound variables: x, free variables: c
+## 1.3.6
+- a) $(w \in R)\land (13 - 2w > c)$ - bound: x
+- b) $(4 \in \mathbb{R} \land 13 - 2(4) \in P) = (4 \in \mathbb{R} \land 13 - 2(4) \text{is a prime})$ where $P = \{y | y \text{is a prime}\}$ bound: x,y
+- c) $(4 \text{is a prime} \land 13 - 2(4) > 1)$ bound: x,y - first bound to x then to y
+## 1.3.7
+- a) $\{0.5, -1\}$
+- b) $\{0.5\}$
+- c) $\{-1\}$
+- d) $\emptyset$
+## 1.3.8
+- a) $A = {x | x is a former or current spouse of Elizabeth Taylor \} = \{No idea\}$
+- b) $A = \{x | x is a logical connective \} = \{\neg, \lor, \land\}$
+- c) $A = \{x | x is the author of this book\} = \{Daniel Vellerman\}$
+## 1.3.9
+- a) $A = \{ x \in R |  x^2 -4x + 3 = 0\} = \{1, 3\}$
+- b) $A = \{ x \in R | x^2 -2x + 3 = 0\} = \emptyset$
+- c) $A = \{x \in R | 5 \in R \land x^2 + 25 < 50\} = \{x \in R | -5 < x < 5\}$
