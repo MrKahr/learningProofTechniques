@@ -127,7 +127,7 @@ These laws can be verified by using truth tables - skipped for laws completed pr
 | T | T | T | T                    | T                               |
 
 ### Variable 
-A variable is a symbolic represention for a number and can be used in predicates e.g. P(x) or D(x,y). Statements that contain variables can be combined using logical connectives e.g. $D(x,y) \lor D(x,z)$. 
+A variable is a symbolic represention of a number and can be used in predicates e.g. P(x) or D(x,y). Statements that contain variables can be combined using logical connectives e.g. $D(x,y) \lor D(x,z)$. 
 
 ### Free and bound variables
 Free variables are objects that a statement says something about and can change the truth value of a statement depending on choice of variable. Bound or dummy variables help express an idea about a set and should not be thought of as any particular object. Bound variables can always be replaced without changing the meaning of a statement. 
@@ -138,25 +138,62 @@ A set is a collection of objects. Each of these objects is refered to as an elem
 It is either the case that an element belongs to a set $\in$ or  it does not $\notin$ which is determined by some elementhood test e.g. x is a prime. 
 
 ### Set builder notation 
-A set is often represented using set builder notation in the form $A = {x | x is a prime}$. 
+A set is often represented using set builder notation in the form $A = \{x | x is a prime\}$. 
 This notation is read: "The set A consists of elements such that these elements are prime numbers", where the latter statement is the elementhood test. s
 
 ### The truth set of a statement
-The truth set of statement P(x) is the set of all values of x that make the predicate P(x) true. In set builder notation this would be $T = {x | P(x)}
+The truth set of statement P(x) is the set of all values of x that make the predicate P(x) true. In set builder notation this would be $T = \{x | P(x)\}$
 
 ### Universe 
-The set of all possible values for variables. This is refered to as the universe of discourse and sometime not explicitly defined. 
-Some common universes include $\fancy{R}, \francy{Q}$¨
+The set of all possible values for variables. This is refered to as the universe of discourse and sometimes not explicitly defined. 
+Some common universes include $\mathbb{R}, \mathbb{Q}$
 
 ### Truth sets and universe of discourse 
 If you have a tautological statement using predicates, then for the truth set T, $T = U$ with U being the universe of discourse. 
 
-### Operations on sets 
+### Operations on sets
+Note that the statements in each definition are elementhood tests.
 #### Set intersection 
+The intersection of sets A and B is defined as: 
+$A \cap B = \{x | x \in A \text{and} x \in B\}$ 
+"The set of elements which are elements of both A and B"
 
 #### Set Union 
+The union of sets A and B is defined as: 
+$A \cup B = \{x | x \in A \text{or} x \in B\}$ 
+"The set of elements which are elements A or B"
 
 #### Set difference 
+The difference of sets A and B are defined as:
+$A \\ B = \{x | x \in A \text{and} x \notin B\}$
+"The set of elements which are elements of A but not of B"
+
+#### Symmetric set difference 
+The symmetric difference of sets A and B are defined as: 
+$A \Delta B = (A \cup B) \\ (A \cup B) = \{x | x \in A \text{xor} x \in B\}$
+"The set of elements which are elements of either A or B but not both
+
+#### Geometric/visual representation of sets
+Sets are often visualized using a venn diagram. 
+A venn digram is rectangle with an arbitrary number of circles in its interior. 
+The rectangle represents the universe of discourse. 
+Each circle's interior represents the members of a set. 
+In the case the circles intersect, then the area of each intersection represents a set whose elements are elements of each intersecting circle. 
+[BILLED MANGLER]
+
+#### Corespondence between different forms 
+Let A and B be truth sets of predicates $P(x), R(x)$ then by defition 
+$T = A \cup B = x \in P(x) \land x \in R(x) = \{x | x \in P(x) \land x \in R(x)\}$
+This definition illustrates that there is a correspondence between set operators and logical connectives, meaning we can choose either type of expression to work with. 
+We note that logical connectives should NEVER be used to perform operations on sets. 
+$\cup$ is NOT $\land$. 
+One use to show the equivalence of statements such as $x \in A \cap (B \cup C) \equiv x \in (A \cap B) \cup (A \cap C)$
+
+### Subset
+Suppose A and B are sets. We say that A is a subset of B if every element of A is also an element of B. We denote this as $A \subseteq B$
+
+### Disjointedness 
+Suppose that A and B are sets. We say that A and B are disjoint if they share no elements. 
 
 ### Key points
 You CANNOT infer that a conclusion is true simply because its premises are (p. 19) -> always check conclusions carefully

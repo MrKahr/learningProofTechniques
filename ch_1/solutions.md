@@ -525,11 +525,13 @@ If one of the premises is a contradiction, it is never the case that all premsis
 - b) $4 \in R^- \land 13 -2(4) > 1$ - false(first term of conjunction falses) - Bound variables: x
 - c) $5 \notin R \land 13 - 2(5) > c$ - false(first term of conjunction false)-  Bound variables: x, free variables: c
 ## 1.3.6
-
+- a) $(w \in R)\land (13 - 2w > c)$ - bound: x
+- b) $(4 \in \mathbb{R} \land 13 - 2(4) \in P) = (4 \in \mathbb{R} \land 13 - 2(4) \text{is a prime})$ where $P = \{y | y \text{is a prime}\}$ bound: x,y
+- c) $(4 \text{is a prime} \land 13 - 2(4) > 1)$ bound: x,y - first bound to x then to y
 ## 1.3.7
 - a) $\{0.5, -1\}$
 - b) $\{0.5\}$
-- c) $\{-1\}$¨
+- c) $\{-1\}$
 - d) $\emptyset$
 ## 1.3.8
 - a) $A = {x | x is a former or current spouse of Elizabeth Taylor \} = \{No idea\}$
