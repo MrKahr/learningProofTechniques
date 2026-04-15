@@ -94,8 +94,8 @@ PREMISES: $P \lor Q$, $R \lor T$ CONCLUSION: $Q \land R$ - Please note that the 
 | F  | T | T | F | T           | T          | T                 | F              | 
 | F  | T | T | T | T           | T          | T                 | F              |
 | T  | F | F | F | T           | F          | T                 | T              |
-¦ T  | F | F | T | T           | T          | F                 | T              |
-¦ T  | F | T | F | T           | T          | T                 | T              | 
+| T  | F | F | T | T           | T          | F                 | T              |
+| T  | F | T | F | T           | T          | T                 | T              | 
 | T  | F | T | T | T           | T          | F                 | T              |
 | T  | T | F | F | T           | F          | T                 | T              |
 | T  | T | F | T | T           | T          | F                 | T              |
@@ -217,7 +217,7 @@ Essentially, what we are training here is finding equivalent expressions, and no
 | T | F | T                | T                                                   | F          | F                                             | F         | F               |              
 | T | T | T                | T                                                   | T          | T                                             | F         | F               |               
 
-## 1.2.6 - TODO: fix table bug here
+## 1.2.6 
 ### A 
 | P | Q | $(P \| Q)$ (nand) |
 |---|---|------------------|
@@ -420,20 +420,29 @@ We show that Morgan's second law is deivable using De Morgan's first law and the
 
 Let P, Q be propositions. 
 
-Then
+Since $\neg\neg P \equiv P, \neg\neg Q \equiv Q$ 
+
+Then 
 
 $
-\neg (P \lor Q) \equiv \neg (\neg \neg P \lor \neg \neg Q) (\text{double negation law})\\
-\equiv \neg \neg (\neg P \land \neg Q) (\text{DeMorgan's first law})\\
-\equiv (\neg P \land \neg Q) (\text{double negation law})\\
+\neg (P \lor Q) \equiv \neg (\neg \neg P \lor \neg \neg Q) (\text{double negation law applied to P and Q})
 $
-The last dervation allows us to conclude that 
+We let $T = \neg P$, and $R = \neg Q$, then 
+$
+\equiv \neg \neg (T \land R) (\text{DeMorgan's first law})\\
+\equiv (T \land R) (\text{double negation law})\\
+$
+We substitute T and R to obtain 
+$
+\equiv (\neg P \land \neg Q) (\text{Substitution})\\
+$
+Therefore 
 $
 \neg (P \lor Q) \equiv (\neg P \land \neg Q) 
 $
-This is exactly the definition of DeMorgan's second law. 
+This is DeMorgan's second law. 
 
-Therefore we conclude that De Morgan's second law is derivable using De Morgan's first law and the law of double negation. 
+Hence De Morgan's second law is derivable using De Morgan's first law and the law of double negation. 
 
 ## 1.2.14
 The goal of this exercise is to show that $[P \land (Q \land R)] \land S \equiv (P \land Q) \land (R \land Q)$ using only associative laws. 
@@ -467,7 +476,7 @@ Therefore, we can conclude that $[P \land (Q \land R)] \land S \equiv (P \land Q
 ## 1.2.15
 Let n represent the number of propositional variables in a table T with $n \in \mathbb{N}$. 
 
-If we assume that truth assignment is an independent choice, then by the foundamental counting principle, the number of rows of T must be $2^n$.
+If we assume that truth assignment is an independent choice, then by the fundamental counting principle, the number of rows of T must be $2^n$.
 
 ## 1.2.16
 | P | Q | ??? |
@@ -518,7 +527,7 @@ If one of the premises is a contradiction, it is never the case that all premsis
 - d) $\{x | x is a province in Canada\}$
 ## 1.3.4
 - a) $\{x | x \in Z^{+} \land y^2 = x\}$
-- b) $\{x | x = 2^y where y \in Z^+}$
+- b) $\{x | x = 2^y where y \in Z^+\}$
 - c) $\{x | x \in Z \land x > 9 \land x < 20\}$
 ## 1.3.5
 - a) $3 \in R \land 13 -2(3) > 1$ - true -  Bound variables: x 
@@ -534,10 +543,65 @@ If one of the premises is a contradiction, it is never the case that all premsis
 - c) $\{-1\}$
 - d) $\emptyset$
 ## 1.3.8
-- a) $A = {x | x is a former or current spouse of Elizabeth Taylor \} = \{No idea\}$
+- a) $A = \{x | x is a former or current spouse of Elizabeth Taylor \} = \{\text{No idea}\}$
 - b) $A = \{x | x is a logical connective \} = \{\neg, \lor, \land\}$
 - c) $A = \{x | x is the author of this book\} = \{Daniel Vellerman\}$
 ## 1.3.9
 - a) $A = \{ x \in R |  x^2 -4x + 3 = 0\} = \{1, 3\}$
 - b) $A = \{ x \in R | x^2 -2x + 3 = 0\} = \emptyset$
 - c) $A = \{x \in R | 5 \in R \land x^2 + 25 < 50\} = \{x \in R | -5 < x < 5\}$
+## 1.4.a (theorem)
+Direct proof that for any sets A and B, $(A \cup B) \\ B \subseteq A$
+0) Obtaning intuition
+
+For intuition, we can draw venn diagrams that represent 3 cases. One for each type of intersection of sets A and B. 
+
+One where A and B are disjoint, one were A = B and one where A and B are not disjoint but also where $A \neq B$. When we do this, we realise that $(A \cup B) \\ B \subseteq A = A$ must be a false statement.  
+
+1) Preliminaries
+
+If $(A \cup B) \\ B$ is a subset of A, then by definition of subsets, every element of $(A \cup B) \\ B$ must be an element of A. We therefore show that $x \in (A \cup B) \\ B \rightarrow x \in A$
+
+2) Direct proof 
+Let $x \in (A \cup B) \\ B \rightarrow A$
+
+By the semantics of set operations, we know obtain the following premises:
+
+- $x \in A \lor x \in B$
+
+- $(x \notin B)$
+
+We realize these are statements of the form
+
+Premises 
+
+- $P\lor R$
+
+- $\neg R$
+
+Conclusion 
+
+- $P$
+
+We know that this is a correct conclusion based on section 1.1 p. 9. However, we still show that this is a valid argument by truth table
+P | R | $P\lor R$ | \neg R | P  |
+--|---|-----------|--------|----| 
+F | F |F          | T      | F  | 
+F | T |T          | F      | F  |
+T | F |T          | T      | T  |
+T | T |T          | F      | T  |
+
+## 1.4.1
+
+$A \cap B = \{3,12\} = P$
+
+$(A \cup B) \ C = \{3,7\} = R$
+
+$A \cup (B \ C) = \{1,3,12,20,35\} = Q$
+
+Disjoint sets: NA 
+
+Subsets 
+
+- $P \subseteq Q$
+## 1.4.2
