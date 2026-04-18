@@ -4,5 +4,6 @@
     "description": "Notes on First Order Logic ",
     "files.associations": {
         "*.md": "markdown_latex_combined"
-    }
+    },
+
 }

@@ -6,9 +6,12 @@
 ## A compiler for logical languages will have to include 
 - NOTE: You are moving in the direction of formal verification, proof systems - know that logic languages very well exist, and you should build your own
 - For some intro see https://www.usenix.org/legacy/publications/library/proceedings/dsl97/full_papers/klarlund/klarlund.pdf 
+- A clear defition of soundness and validity
 - A syntax checker - maybe static analysis of well-formedness? 
 - A small set of appropriate types (maybe (logic) variable, state?)
-- An AST 
+- An AST generator
+- Maybe basic known deduction rules (e.g. modus ponens)
+- A reduction to automata?
 
 ## The following logical properties are very important in computer science
 - Validity

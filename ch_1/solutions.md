@@ -584,12 +584,12 @@ Conclusion
 - $P$
 
 We know that this is a correct conclusion based on section 1.1 p. 9. However, we still show that this is a valid argument by truth table
-P | R | $P\lor R$ | \neg R | P  |
---|---|-----------|--------|----| 
-F | F |F          | T      | F  | 
-F | T |T          | F      | F  |
-T | F |T          | T      | T  |
-T | T |T          | F      | T  |
+P | R | $P\lor R$ | $\neg R$ | P  |
+--|---|-----------|----------|----| 
+F | F |F          | T        | F  | 
+F | T |T          | F        | F  |
+T | F |T          | T        | T  |
+T | T |T          | F        | T  |
 
 ## 1.4.1
 
@@ -709,7 +709,79 @@ Verified using Venn diagrams
 
 ### 1.4.7
 The remaining derivations will be sketched, not prettied. 
+A) 
+direction $\rightarrow$
 $
 x \in (A \cup B) \\ C 
-\equiv (x \in A \lor \land)
+
+\equiv (x \in A \lor x \in B) \land x \notin C \text{Definition of set union and difference}
+
+\equiv (x in A \land x \notin C) \lor (x \in B \land x \notin C)\text{By distributive property}
+
+\equiv x \in (A \\ C) \cup (B \\ C) \text{By definition of set union and difference}
+$
+We can conclude that $(A \cup B) \\ C \subseteq (A \\ C) \cup (B \\ C)$
+
+direction $\leftarrow$
+Similar derivations can be used to show that $(A \\ C) \cup (B \\ C) \subseteq (A \cup B) \\ C$
+
+Thus, $(A \cup B) \\ C = (A \\ C) \cup (B \\ C)$
+
+B) 
+$A \cup (B \\ C) = (A \cup B) \\ (C \\ A)$
+direction $\rightarrow$
+
+$
+x \in A \cup (B \\ C)
+
+\equiv x \in A \lor (x \in B \land x \notin C) \text{Definition of set union and difference}
+
+\equiv (x \in A \lor x \in B) \land (x \in A \lor x \notin C) \text{By distributive property of disjunctions}
+
+\equiv (x \in A \lor x \in B) \land \neg(x \notin A \land x \in C) \text{By DeMorgan's first law}
+
+\equiv (x \in A \lor x \in B) \land \neg(x \in C \\ A) \text{By definition of set difference}
+
+\equiv (x \in A \cup B) \land \neg(x \in C \\ A) \text{By definition of set union}
+
+\equiv x \in (A \cup B) \\ (C \\ A) \text{By definition of set difference}
+$
+We can conclude that $A \cup (B \\ C) \subseteq (A \cup B) \\ (C \\ A)$
+direction $\leftarrow$
+is similar to the previous direction
+
+### 1.4.8
+A)
+Sketch of direct proof that $(A \\ B) \cap C = (A \cap C) \\ B 
+Let A,B,C be sets and let $x \in (A \\ B) \cap C$
+
+Then
+direction $\rightarrow$
+$
+x \in (A \\ B) \cap C 
+
+\equiv x \in (A \\ B) \land x \in C \text{Definition of set intersection}
+
+\equiv (x \in A \land x \notin B) \land x \in C \text{Definition of set difference}
+
+\equiv (x \in A \land x \in C) \land x \notin B \text{By associative and commutative properties of conjunctions}
+
+\equiv (x \in A \cap C) \\ B \text{By definition of set intersection and difference}
+$
+
+Therefore 
+$
+(A \\ B) \cap C \subseteq (A \cap C) \\ B
+$
+direction $\leftarrow$
+is similar to the previous direction; we can conclude that $(A \\ B) \cap C = (A \cap C) \\ B$
+
+B) 
+Sketch of direct proof that $(A \cap B) \B = \emptyset$
+
+Let A,B be sets and let $x \in (A \cap B) \\ A$
+
+
+$
+\cup
 $
