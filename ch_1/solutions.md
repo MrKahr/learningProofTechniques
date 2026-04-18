@@ -595,13 +595,121 @@ T | T |T          | F      | T  |
 
 $A \cap B = \{3,12\} = P$
 
-$(A \cup B) \ C = \{3,7\} = R$
+$(A \cup B) \ C = \{1,12,20,35\} = R$
 
 $A \cup (B \ C) = \{1,3,12,20,35\} = Q$
 
 Disjoint sets: NA 
 
-Subsets 
+Subsets: $P \subseteq Q$, $R \subseteq Q$
 
-- $P \subseteq Q$
 ## 1.4.2
+$A \cup B = \{us,g,c,a,f,i,b\}$
+
+$(A \cap B) \ C = \emptyset$
+
+$(B \cap C) \ A = \{f\}$
+
+## 1.4.3
+Verified using Venn diagrams
+
+### 1.4.4
+Verificed using Venn diagrams 
+
+### 1.4.5
+#### a
+We show by direct proof that $A \\ (A \cap B) = A \ B$
+
+Let A,B be sets and let $x \in A \\ (A \cap B)$
+
+Then 
+
+Direction $\rightarrow$
+$
+x \in (A \\ (A \cap B))  
+
+\equiv x \in A \land \neg(x \in A \land x \in B)
+
+\equiv x \in A \land (x \notin A \lor x \notin B) \text{DeMorgans First law appplied}
+
+\equiv (x \in A \land x \notin A) \lor (x \in A \land x \notin B)\text{Distributive law applied}
+
+\equiv x \in A \land x \notin B \text{Since:}x \in A \land x \notin A \text{is false}
+
+\equiv x \in A \\ B \text{By definition of set difference}
+$
+
+Direction $\leftarrow$
+Note: I've tried simplifying this direction instead of repeating the operations in the first proof in reverse
+$
+x \in A \\ B 
+\equiv x \in A \land x \not B 
+$
+
+Therefore 
+$
+x \notin A \cup B \text{Definition of intersection}
+$
+And 
+$
+x \in A \\ A \cup B
+$
+
+Hence
+$A \\ (A \cap B) = A \ B$
+
+#### b
+We show by direct proof that $A \cup (B \cap C) =  (A \cup B) \cap (A \cup C)$
+
+Let A,B,C be sets and let $x \in A \cup (B \cap C)$
+
+Then 
+
+Direction $\rightarrow$ 
+
+$
+x \in A \cup (B \cap C) 
+
+\equiv x \in A \lor (x \in B \land x \in C) \text{Apply definition of set intersection and union}
+
+\equiv (x \in A \lor x \in B) \land (x \in A \lor x \in C) \text{Distributive property of disjunctions}
+
+\equiv x \in (A \cup B) \land x \in (A \cup C) \text{Apply definition of set union}
+
+\equiv x \in (A \cup B) \cap (A \cup C) \text{Apply definition of set intersection}
+$
+
+Therefore 
+
+$
+A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)
+$
+
+Direction $\leftarrow$ 
+
+$
+x \in (A \cup B) \cap (A \cup C)
+
+\equiv (x \in A \lor x \in B) \land (x \in A \lor x \in C) \text{By definition of set intersection and union} 
+
+\equiv x \in A \lor (x \in B \land x \in C) \text{By distributive property of disjunctions}
+
+\equiv x \in (A \cup (B \cap C)) \text{By definition of set intersection and union}
+$
+
+Therefore
+$
+(A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)
+$
+
+We can conclude that $A \cup (B \cap C) =  (A \cup B) \cap (A \cup C)$
+
+### 1.4.6
+Verified using Venn diagrams 
+
+### 1.4.7
+The remaining derivations will be sketched, not prettied. 
+$
+x \in (A \cup B) \\ C 
+\equiv (x \in A \lor \land)
+$
