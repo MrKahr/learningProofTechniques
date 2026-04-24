@@ -1,0 +1,7 @@
+   [
+        {
+            "key":"ctrl+shift+q",
+            "command":"markdown.showPreview",
+            "when":"editorLangId == 'markdown' || editorLangId == 'markdown_latex_combined'"
+        }
+    ]

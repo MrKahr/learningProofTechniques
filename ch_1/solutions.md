@@ -1,5 +1,8 @@
 # Exercises
 
+## Quick notes on terminology 
+In Vellerman's terminology, property = law e.g. associative property
+
 ## 1.1.1
 a) 
 Let P = We'll have a reading assignment, Q = we'll have homework problems, R = we'll have a test
@@ -94,8 +97,8 @@ PREMISES: $P \lor Q$, $R \lor T$ CONCLUSION: $Q \land R$ - Please note that the 
 | F  | T | T | F | T           | T          | T                 | F              | 
 | F  | T | T | T | T           | T          | T                 | F              |
 | T  | F | F | F | T           | F          | T                 | T              |
-¦ T  | F | F | T | T           | T          | F                 | T              |
-¦ T  | F | T | F | T           | T          | T                 | T              | 
+| T  | F | F | T | T           | T          | F                 | T              |
+| T  | F | T | F | T           | T          | T                 | T              | 
 | T  | F | T | T | T           | T          | F                 | T              |
 | T  | T | F | F | T           | F          | T                 | T              |
 | T  | T | F | T | T           | T          | F                 | T              |
@@ -217,7 +220,7 @@ Essentially, what we are training here is finding equivalent expressions, and no
 | T | F | T                | T                                                   | F          | F                                             | F         | F               |              
 | T | T | T                | T                                                   | T          | T                                             | F         | F               |               
 
-## 1.2.6 - TODO: fix table bug here
+## 1.2.6 
 ### A 
 | P | Q | $(P \| Q)$ (nand) |
 |---|---|------------------|
@@ -420,20 +423,29 @@ We show that Morgan's second law is deivable using De Morgan's first law and the
 
 Let P, Q be propositions. 
 
-Then
+Since $\neg\neg P \equiv P, \neg\neg Q \equiv Q$ 
+
+Then 
 
 $
-\neg (P \lor Q) \equiv \neg (\neg \neg P \lor \neg \neg Q) (\text{double negation law})\\
-\equiv \neg \neg (\neg P \land \neg Q) (\text{DeMorgan's first law})\\
-\equiv (\neg P \land \neg Q) (\text{double negation law})\\
+\neg (P \lor Q) \equiv \neg (\neg \neg P \lor \neg \neg Q) (\text{double negation law applied to P and Q})
 $
-The last dervation allows us to conclude that 
+We let $T = \neg P$, and $R = \neg Q$, then 
+$
+\equiv \neg \neg (T \land R) (\text{DeMorgan's first law})\\
+\equiv (T \land R) (\text{double negation law})\\
+$
+We substitute T and R to obtain 
+$
+\equiv (\neg P \land \neg Q) (\text{Substitution})\\
+$
+Therefore 
 $
 \neg (P \lor Q) \equiv (\neg P \land \neg Q) 
 $
-This is exactly the definition of DeMorgan's second law. 
+This is DeMorgan's second law. 
 
-Therefore we conclude that De Morgan's second law is derivable using De Morgan's first law and the law of double negation. 
+Hence De Morgan's second law is derivable using De Morgan's first law and the law of double negation. 
 
 ## 1.2.14
 The goal of this exercise is to show that $[P \land (Q \land R)] \land S \equiv (P \land Q) \land (R \land Q)$ using only associative laws. 
@@ -467,7 +479,7 @@ Therefore, we can conclude that $[P \land (Q \land R)] \land S \equiv (P \land Q
 ## 1.2.15
 Let n represent the number of propositional variables in a table T with $n \in \mathbb{N}$. 
 
-If we assume that truth assignment is an independent choice, then by the foundamental counting principle, the number of rows of T must be $2^n$.
+If we assume that truth assignment is an independent choice, then by the fundamental counting principle, the number of rows of T must be $2^n$.
 
 ## 1.2.16
 | P | Q | ??? |
@@ -518,7 +530,7 @@ If one of the premises is a contradiction, it is never the case that all premsis
 - d) $\{x | x is a province in Canada\}$
 ## 1.3.4
 - a) $\{x | x \in Z^{+} \land y^2 = x\}$
-- b) $\{x | x = 2^y where y \in Z^+}$
+- b) $\{x | x = 2^y where y \in Z^+\}$
 - c) $\{x | x \in Z \land x > 9 \land x < 20\}$
 ## 1.3.5
 - a) $3 \in R \land 13 -2(3) > 1$ - true -  Bound variables: x 
@@ -534,10 +546,393 @@ If one of the premises is a contradiction, it is never the case that all premsis
 - c) $\{-1\}$
 - d) $\emptyset$
 ## 1.3.8
-- a) $A = {x | x is a former or current spouse of Elizabeth Taylor \} = \{No idea\}$
+- a) $A = \{x | x is a former or current spouse of Elizabeth Taylor \} = \{\text{No idea}\}$
 - b) $A = \{x | x is a logical connective \} = \{\neg, \lor, \land\}$
 - c) $A = \{x | x is the author of this book\} = \{Daniel Vellerman\}$
 ## 1.3.9
 - a) $A = \{ x \in R |  x^2 -4x + 3 = 0\} = \{1, 3\}$
 - b) $A = \{ x \in R | x^2 -2x + 3 = 0\} = \emptyset$
 - c) $A = \{x \in R | 5 \in R \land x^2 + 25 < 50\} = \{x \in R | -5 < x < 5\}$
+## 1.4.a (theorem)
+Direct proof that for any sets A and B, $(A \cup B) \\ B \subseteq A$
+0) Obtaning intuition
+
+For intuition, we can draw venn diagrams that represent 3 cases. One for each type of intersection of sets A and B. 
+
+One where A and B are disjoint, one were A = B and one where A and B are not disjoint but also where $A \neq B$. When we do this, we realise that $(A \cup B) \\ B \subseteq A = A$ must be a false statement.  
+
+1) Preliminaries
+
+If $(A \cup B) \\ B$ is a subset of A, then by definition of subsets, every element of $(A \cup B) \\ B$ must be an element of A. We therefore show that $x \in (A \cup B) \\ B \rightarrow x \in A$
+
+2) Direct proof 
+Let $x \in (A \cup B) \\ B \rightarrow A$
+
+By the semantics of set operations, we know obtain the following premises:
+
+- $x \in A \lor x \in B$
+
+- $(x \notin B)$
+
+We realize these are statements of the form
+
+Premises 
+
+- $P\lor R$
+
+- $\neg R$
+
+Conclusion 
+
+- $P$
+
+We know that this is a correct conclusion based on section 1.1 p. 9. However, we still show that this is a valid argument by truth table
+P | R | $P\lor R$ | $\neg R$ | P  |
+--|---|-----------|----------|----| 
+F | F |F          | T        | F  | 
+F | T |T          | F        | F  |
+T | F |T          | T        | T  |
+T | T |T          | F        | T  |
+
+## 1.4.1
+
+$A \cap B = \{3,12\} = P$
+
+$(A \cup B) \ C = \{1,12,20,35\} = R$
+
+$A \cup (B \ C) = \{1,3,12,20,35\} = Q$
+
+Disjoint sets: NA 
+
+Subsets: $P \subseteq Q$, $R \subseteq Q$
+
+## 1.4.2
+$A \cup B = \{us,g,c,a,f,i,b\}$
+
+$(A \cap B) \ C = \emptyset$
+
+$(B \cap C) \ A = \{f\}$
+
+## 1.4.3
+Verified using Venn diagrams
+
+### 1.4.4
+Verificed using Venn diagrams 
+
+### 1.4.5
+#### a
+We show by direct proof that $A \\ (A \cap B) = A \ B$
+
+Let A,B be sets and let $x \in A \\ (A \cap B)$
+
+Then 
+
+Direction $\rightarrow$
+$
+x \in (A \\ (A \cap B))  
+
+\equiv x \in A \land \neg(x \in A \land x \in B)
+
+\equiv x \in A \land (x \notin A \lor x \notin B) \text{DeMorgans First law appplied}
+
+\equiv (x \in A \land x \notin A) \lor (x \in A \land x \notin B)\text{Distributive law applied}
+
+\equiv x \in A \land x \notin B \text{Since:}x \in A \land x \notin A \text{is false}
+
+\equiv x \in A \\ B \text{By definition of set difference}
+$
+
+Direction $\leftarrow$
+Note: I've tried simplifying this direction instead of repeating the operations in the first proof in reverse
+$
+x \in A \\ B 
+\equiv x \in A \land x \not B 
+$
+
+Therefore 
+$
+x \notin A \cup B \text{Definition of intersection}
+$
+And 
+$
+x \in A \\ A \cup B
+$
+
+Hence
+$A \\ (A \cap B) = A \ B$
+
+#### b
+We show by direct proof that $A \cup (B \cap C) =  (A \cup B) \cap (A \cup C)$
+
+Let A,B,C be sets and let $x \in A \cup (B \cap C)$
+
+Then 
+
+Direction $\rightarrow$ 
+
+$
+x \in A \cup (B \cap C) 
+
+\equiv x \in A \lor (x \in B \land x \in C) \text{Apply definition of set intersection and union}
+
+\equiv (x \in A \lor x \in B) \land (x \in A \lor x \in C) \text{Distributive property of disjunctions}
+
+\equiv x \in (A \cup B) \land x \in (A \cup C) \text{Apply definition of set union}
+
+\equiv x \in (A \cup B) \cap (A \cup C) \text{Apply definition of set intersection}
+$
+
+Therefore 
+
+$
+A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)
+$
+
+Direction $\leftarrow$ 
+
+$
+x \in (A \cup B) \cap (A \cup C)
+
+\equiv (x \in A \lor x \in B) \land (x \in A \lor x \in C) \text{By definition of set intersection and union} 
+
+\equiv x \in A \lor (x \in B \land x \in C) \text{By distributive property of disjunctions}
+
+\equiv x \in (A \cup (B \cap C)) \text{By definition of set intersection and union}
+$
+
+Therefore
+$
+(A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)
+$
+
+We can conclude that $A \cup (B \cap C) =  (A \cup B) \cap (A \cup C)$
+
+### 1.4.6
+Verified using Venn diagrams 
+
+### 1.4.7
+The remaining derivations will be sketched, not prettied. 
+A) 
+direction $\rightarrow$
+$
+x \in (A \cup B) \\ C 
+
+\equiv (x \in A \lor x \in B) \land x \notin C \text{Definition of set union and difference}
+
+\equiv (x in A \land x \notin C) \lor (x \in B \land x \notin C)\text{By distributive property}
+
+\equiv x \in (A \\ C) \cup (B \\ C) \text{By definition of set union and difference}
+$
+We can conclude that $(A \cup B) \\ C \subseteq (A \\ C) \cup (B \\ C)$
+
+direction $\leftarrow$
+Similar derivations can be used to show that $(A \\ C) \cup (B \\ C) \subseteq (A \cup B) \\ C$
+
+Thus, $(A \cup B) \\ C = (A \\ C) \cup (B \\ C)$
+
+B) 
+$A \cup (B \\ C) = (A \cup B) \\ (C \\ A)$
+direction $\rightarrow$
+
+$
+x \in A \cup (B \\ C)
+
+\equiv x \in A \lor (x \in B \land x \notin C) \text{Definition of set union and difference}
+
+\equiv (x \in A \lor x \in B) \land (x \in A \lor x \notin C) \text{By distributive property of disjunctions}
+
+\equiv (x \in A \lor x \in B) \land \neg(x \notin A \land x \in C) \text{By DeMorgan's first law}
+
+\equiv (x \in A \lor x \in B) \land \neg(x \in C \\ A) \text{By definition of set difference}
+
+\equiv (x \in A \cup B) \land \neg(x \in C \\ A) \text{By definition of set union}
+
+\equiv x \in (A \cup B) \\ (C \\ A) \text{By definition of set difference}
+$
+We can conclude that $A \cup (B \\ C) \subseteq (A \cup B) \\ (C \\ A)$
+direction $\leftarrow$
+is similar to the previous direction
+
+### 1.4.8
+A)
+Sketch of direct proof that $(A \\ B) \cap C = (A \cap C) \\ B 
+Let A,B,C be sets and let $x \in (A \\ B) \cap C$
+
+Then
+direction $\rightarrow$
+$
+x \in (A \\ B) \cap C 
+
+\equiv x \in (A \\ B) \land x \in C \text{Definition of set intersection}
+
+\equiv (x \in A \land x \notin B) \land x \in C \text{Definition of set difference}
+
+\equiv (x \in A \land x \in C) \land x \notin B \text{By associative and commutative properties of conjunctions}
+
+\equiv (x \in A \cap C) \\ B \text{By definition of set intersection and difference}
+$
+
+Therefore 
+$
+(A \\ B) \cap C \subseteq (A \cap C) \\ B
+$
+direction $\leftarrow$
+is similar to the previous direction; we can conclude that $(A \\ B) \cap C = (A \cap C) \\ B$
+
+B) 
+Sketch of direct proof that $(A \cap B) \B = \emptyset$
+
+Let A,B be sets and let $x \in (A \cap B) \\ B$
+
+$
+x \in (A \cap B) \\ B
+
+\equiv (x \in A \land B) \land x \notin B \text{Intersection + Diff}
+
+\equiv x \in A \land (x \in B \land x \notin B)\text{Contradiction, + Associasitivity}
+$
+
+Since $x \in B \land x \notin B$ is a contradiction, $(A \cap B) \\ B = \emptyset
+
+C) 
+Direction $\rightarrow$
+
+$
+x \in A \\ (A \\ B)
+
+\equiv x \in A \land \neg (x \in A \land x \notin B)
+
+\equiv x \in A \land (x \notin A \lor x \in B)
+
+\equiv (x \in A \land \notin A) \lor (x \in A \land x \in B)
+
+\equiv (x \in A \land x \in B)
+
+\equiv x \in A \cap B
+$
+
+Therefore $A \\ (A \\ B) \subseteq A \cap B
+
+Other implication proved similarly
+
+### 1.4.9
+a) $(x \in A \land x \notin B) \land x \notin C$
+
+b) 
+$
+x \in A \land \neg (x \in B \land x \notin C)
+
+\equiv x \in A \land (x \notin B \lor x \in C) \text{DeMorgan}
+
+\equiv (x \in A \land x \notin B) \lor (x \in A \land x \in C) \text{Distributive law}
+$
+
+c) 
+$
+(x \in A \land x \notin B) \lor (x \in A \land x \in C)
+$
+
+d) - Suspected we can simplify, since no equivalence found?
+$
+(x \in A \land x \notin B) \and (x \in A \land x \notin C)
+
+\equiv (x \in A \land x \notin B \and x \in A) \land x \notin C \text{Associative law}
+
+\equiv (x \in A \land x \in A \land x \notin B) \land x \notin C \text{Commutative law}
+
+\equiv (x \in A \land x \notin B) \land x \notin C \text{Identity law}
+
+
+$
+
+e)
+$
+x \in A \land \neg(x \in B \lor x \in C)
+
+\equiv x \in A \land (x \notin B \land x \notin C) \text{DeMorgan}
+
+\equiv (x \in A \land x \in B) \land x \notin C \text{Associative law}
+$
+
+Conclusion: 
+$
+a \equiv \equiv d \equiv e
+
+b \equiv c
+$
+
+### 1.4.10
+a) This exercises shows how dangerous it is to assume that a biimplication is true based on an implication
+$
+A = \{1,2\}
+
+B = \{2,3\}
+
+(A \cup B) \\ B = \{1\}
+$
+
+b)
+We show by direct proof that $(A \cup B) \\ B = A \\ B$
+Let A,B be sets, and let:
+
+Implication $\rightarrow$
+$
+x \in (A \cup B) \\ B 
+
+\equiv (x \in A \lor x \in B) \land x \notin B \text{Union and difference}
+
+\equiv (x \in A \land x \notin B) \lor (x \in B \land x \notin B) \text{Distributive property of disjunctions}
+
+\equiv x \in A \land x \notin B \text{Since $x \in B \land x \notin B$ is a contradiction}
+
+\equiv x \in A \\ B \text{By definition of set difference}
+$
+
+Implication $\leftarrow$
+$
+x \in A \\ B
+
+\equiv x \in A \land x \notin B \text{Definition of set difference}
+
+\equiv (x \in A \land x \notin B) \lor (x \in B \land x \notin B) \text{Distributive property of disjunctions}
+
+\equiv (x \in A \lor x \in B) \land x \notin B \text{Distributive property of disjunctions}
+
+\equiv x \in (A \cup B) \\ B \text{Definition of set union and difference}
+$
+
+### 1.4.11
+a) If A and B are disjoint sets, then all possible critieria are fulfilled.
+b) A counterexample where sets A, B are not disjoint. 
+$
+A = \{1,2\}, B = \{2,3\}
+
+(A \\ B) \\ B = \{1\}, \text{This is not set A}
+
+A \\ B = \{1\}, A \cup B = {1,2,3} \text{These three sets are not the same}
+$
+
+### 1.4.12
+a) There is no region in the figure corresponding to $(A \cap D) \ (B \cup C)$. 
+Removing $B \cup C$ from the diagram removes all elements from $A \cap D$
+
+b) Yes, drawn on paper (drawn A,B and C as intersecting circles. Draw D as intersecting all sets and the intersections, but leave some room in each intersection, and be sure to give D a little room to represent non-overlapping elements)
+
+### 1.4.13
+a) By drawing the venn diagram for A,B,C, then you realize that $(A \cup B) \\ C \subseteq A \land (B \\ C)$
+
+b)$ A = \{1,2\}, B = \{2,3\}, C = \{1,3\}$
+
+### 1.4.14
+Drawn on paper. Note that $A \Delta B = (A \\ B) \cup (B \\ A)$
+
+### 1.4.15 - Done by Venn diagram
+Verified on paper
+
+### 1.4.16 - Done by Venn diagram
+Verified on paper
+
+### 1.4.17 - Verified by Venn Diagram
+a) $C \\ B$
+b) $(A \\ B) \\ C$ - TODO: did not agree with solution of others, must check again
+c) $A \cup B$

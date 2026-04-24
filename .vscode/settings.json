@@ -1,0 +1,9 @@
+{
+    "name": "First Order Logic",
+    "version": "0.1.0",
+    "description": "Notes on First Order Logic ",
+    "files.associations": {
+        "*.md": "markdown_latex_combined"
+    },
+
+}
