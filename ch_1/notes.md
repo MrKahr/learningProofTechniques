@@ -202,3 +202,43 @@ Validity determines whether a conclusion follows from premises - i.e. whether th
 
 There are two kinds of variables, one numeric (e.g. x) and one boolean (e.g. S,Q). 
 
+### Conditional connective (if then)
+#### Useful terms
+- Antecedent: P
+- Consequent: Q
+- Converse: $Q \implies P$
+- Contrapositive: $\neg Q \implies \neg P$
+
+#### Truth table 
+P | Q | $P \implies Q$ |
+F | F | T              |
+F | T | T              |
+T | F | F              |
+T | T | T              |
+
+### Why is the conditional connective defined this way?
+
+
+### Laws
+
+$P bi$
+
+### Mapping of conditional connectives to natural language
+- "If P then Q" - $P \rightarrow Q$
+- "P only if Q" - $P \rightarrow Q$
+- "P is sufficient for Q" - $P \rightarrow Q$
+- "Q is necessary for P" - $P \rightarrow Q$
+
+### Biconditional 
+#### Truth table
+P | Q | $P \leftrightarrow Q$ |
+F | F | T                     |
+F | T | F                     |
+T | F | F                     |
+T | T | T                     |
+
+#### Why is the biconditional connective defined this way?
+
+
+### Laws
+
