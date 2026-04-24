@@ -34,6 +34,10 @@
 		"prefix": "intersection",
 		"body": "\\cap"
 	},
+	"setdifference":{
+		"prefix": "setdiff",
+		"body": "\\\\\\"
+	},
 	"subseteq":{
 		"prefix": "subseteq",
 		"body": "\\subseteq"
@@ -41,5 +45,37 @@
 	"superseteq":{
 		"prefix": "superseteq",
 		"body": "\\superseteq"
+	},
+	"equivalent":{
+		"prefix": "equivalent",
+		"body": "\\equiv"
+	},
+	"in":{
+		"prefix": "in",
+		"body": "\\in"
+	},
+	"notin":{
+		"prefix": "notin",
+		"body": "\\notin"
+	},
+	"or":{
+		"prefix": "or",
+		"body": "\\lor"
+	},
+	"and":{
+		"prefix": "and",
+		"body": "\\land"
+	},
+	"not":{
+		"prefix": "not",
+		"body": "\\neg"
+	},
+	"emptyset":{
+		"prefix": "emptyset",
+		"body": "\\emptyset"
+	},
+	"text":{
+		"prefix": "text",
+		"body": "\\text{}"
 	}
 }
