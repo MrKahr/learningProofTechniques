@@ -1,5 +1,8 @@
 # Exercises
 
+## Quick notes on terminology 
+In Vellerman's terminology, property = law e.g. associative property
+
 ## 1.1.1
 a) 
 Let P = We'll have a reading assignment, Q = we'll have homework problems, R = we'll have a test
@@ -779,9 +782,157 @@ is similar to the previous direction; we can conclude that $(A \\ B) \cap C = (A
 B) 
 Sketch of direct proof that $(A \cap B) \B = \emptyset$
 
-Let A,B be sets and let $x \in (A \cap B) \\ A$
+Let A,B be sets and let $x \in (A \cap B) \\ B$
+
+$
+x \in (A \cap B) \\ B
+
+\equiv (x \in A \land B) \land x \notin B \text{Intersection + Diff}
+
+\equiv x \in A \land (x \in B \land x \notin B)\text{Contradiction, + Associasitivity}
+$
+
+Since $x \in B \land x \notin B$ is a contradiction, $(A \cap B) \\ B = \emptyset
+
+C) 
+Direction $\rightarrow$
+
+$
+x \in A \\ (A \\ B)
+
+\equiv x \in A \land \neg (x \in A \land x \notin B)
+
+\equiv x \in A \land (x \notin A \lor x \in B)
+
+\equiv (x \in A \land \notin A) \lor (x \in A \land x \in B)
+
+\equiv (x \in A \land x \in B)
+
+\equiv x \in A \cap B
+$
+
+Therefore $A \\ (A \\ B) \subseteq A \cap B
+
+Other implication proved similarly
+
+### 1.4.9
+a) $(x \in A \land x \notin B) \land x \notin C$
+
+b) 
+$
+x \in A \land \neg (x \in B \land x \notin C)
+
+\equiv x \in A \land (x \notin B \lor x \in C) \text{DeMorgan}
+
+\equiv (x \in A \land x \notin B) \lor (x \in A \land x \in C) \text{Distributive law}
+$
+
+c) 
+$
+(x \in A \land x \notin B) \lor (x \in A \land x \in C)
+$
+
+d) - Suspected we can simplify, since no equivalence found?
+$
+(x \in A \land x \notin B) \and (x \in A \land x \notin C)
+
+\equiv (x \in A \land x \notin B \and x \in A) \land x \notin C \text{Associative law}
+
+\equiv (x \in A \land x \in A \land x \notin B) \land x \notin C \text{Commutative law}
+
+\equiv (x \in A \land x \notin B) \land x \notin C \text{Identity law}
 
 
 $
-\cup
+
+e)
 $
+x \in A \land \neg(x \in B \lor x \in C)
+
+\equiv x \in A \land (x \notin B \land x \notin C) \text{DeMorgan}
+
+\equiv (x \in A \land x \in B) \land x \notin C \text{Associative law}
+$
+
+Conclusion: 
+$
+a \equiv \equiv d \equiv e
+
+b \equiv c
+$
+
+### 1.4.10
+a) This exercises shows how dangerous it is to assume that a biimplication is true based on an implication
+$
+A = \{1,2\}
+
+B = \{2,3\}
+
+(A \cup B) \\ B = \{1\}
+$
+
+b)
+We show by direct proof that $(A \cup B) \\ B = A \\ B$
+Let A,B be sets, and let:
+
+Implication $\rightarrow$
+$
+x \in (A \cup B) \\ B 
+
+\equiv (x \in A \lor x \in B) \land x \notin B \text{Union and difference}
+
+\equiv (x \in A \land x \notin B) \lor (x \in B \land x \notin B) \text{Distributive property of disjunctions}
+
+\equiv x \in A \land x \notin B \text{Since $x \in B \land x \notin B$ is a contradiction}
+
+\equiv x \in A \\ B \text{By definition of set difference}
+$
+
+Implication $\leftarrow$
+$
+x \in A \\ B
+
+\equiv x \in A \land x \notin B \text{Definition of set difference}
+
+\equiv (x \in A \land x \notin B) \lor (x \in B \land x \notin B) \text{Distributive property of disjunctions}
+
+\equiv (x \in A \lor x \in B) \land x \notin B \text{Distributive property of disjunctions}
+
+\equiv x \in (A \cup B) \\ B \text{Definition of set union and difference}
+$
+
+### 1.4.11
+a) If A and B are disjoint sets, then all possible critieria are fulfilled.
+b) A counterexample where sets A, B are not disjoint. 
+$
+A = \{1,2\}, B = \{2,3\}
+
+(A \\ B) \\ B = \{1\}, \text{This is not set A}
+
+A \\ B = \{1\}, A \cup B = {1,2,3} \text{These three sets are not the same}
+$
+
+### 1.4.12
+a) There is no region in the figure corresponding to $(A \cap D) \ (B \cup C)$. 
+Removing $B \cup C$ from the diagram removes all elements from $A \cap D$
+
+b) Yes, drawn on paper (drawn A,B and C as intersecting circles. Draw D as intersecting all sets and the intersections, but leave some room in each intersection, and be sure to give D a little room to represent non-overlapping elements)
+
+### 1.4.13
+a) By drawing the venn diagram for A,B,C, then you realize that $(A \cup B) \\ C \subseteq A \land (B \\ C)$
+
+b)$ A = \{1,2\}, B = \{2,3\}, C = \{1,3\}$
+
+### 1.4.14
+Drawn on paper. Note that $A \Delta B = (A \\ B) \cup (B \\ A)$
+
+### 1.4.15 - Done by Venn diagram
+Verified on paper
+
+### 1.4.16 - Done by Venn diagram
+Verified on paper
+
+### 1.4.17 - Verified by Venn Diagram
+a) $C \\ B$
+b) $(A \\ B) \\ C$ - TODO: did not agree with solution of others, must check again
+c) $A \cup B$
