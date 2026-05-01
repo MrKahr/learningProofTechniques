@@ -936,3 +936,29 @@ Verified on paper
 a) $C \\ B$
 b) $(A \\ B) \\ C$ - TODO: did not agree with solution of others, must check again
 c) $A \cup B$
+
+### 1.5.1 
+a) $(S \lor \neg E) \rightarrow \neg H$
+b) $(H \land F) \rightarrow D$
+c) $(F \rightarrow D) \land (H \rightarrow D)$
+d) $Q(x) \rightarrow (Prime(x) \rightarrow Odd(x))$
+
+### 1.5.2 
+a) $H \rightarrow (A \land P)$
+b) $M \rightarrow (C \land D)$
+c) $\neg S \rightarrow D$
+d) $(D(x,4) \lor D(x,6) \rightarrow \neg P(x))$ where x is the predicate "x is a prime"
+
+### 1.5.3
+a) $R \rightarrow (W \land \neg S)$
+b) $$
+
+### 1.5.4
+### 1.5.5
+### 1.5.6
+### 1.5.7
+### 1.5.8
+### 1.5.9
+### 1.5.10
+### 1.5.11
+### 1.5.12
