@@ -919,17 +919,17 @@ Removing $B \cup C$ from the diagram removes all elements from $A \cap D$
 b) Yes, drawn on paper (drawn A,B and C as intersecting circles. Draw D as intersecting all sets and the intersections, but leave some room in each intersection, and be sure to give D a little room to represent non-overlapping elements)
 
 ### 1.4.13
-a) By drawing the venn diagram for A,B,C, then you realize that $(A \cup B) \\ C \subseteq A \land (B \\ C)$
+a) By drawing the venn diagram for A,B,C, you realize that $(A \cup B) \\ C \subseteq A \land (B \\ C)$
 
 b)$ A = \{1,2\}, B = \{2,3\}, C = \{1,3\}$
 
-### 1.4.14
-Drawn on paper. Note that $A \Delta B = (A \\ B) \cup (B \\ A)$
+### 1.4.14 - Verified by Venn diagram
+Note that $A \Delta B = (A \\ B) \cup (B \\ A)$
 
-### 1.4.15 - Done by Venn diagram
+### 1.4.15 - Verified by Venn diagram
 Verified on paper
 
-### 1.4.16 - Done by Venn diagram
+### 1.4.16 - Verified by Venn diagram
 Verified on paper
 
 ### 1.4.17 - Verified by Venn Diagram
@@ -950,15 +950,225 @@ c) $\neg S \rightarrow D$
 d) $(D(x,4) \lor D(x,6) \rightarrow \neg P(x))$ where x is the predicate "x is a prime"
 
 ### 1.5.3
-a) $R \rightarrow (W \land \neg S)$
-b) $$
+a) 
+$
+R \rightarrow (W \land \neg S)
 
-### 1.5.4
-### 1.5.5
+\equiv \neg (W \land \neg S) \rightarrow \neg R \text{Contrapositive law}
+
+\equiv (\neg W \lor \neg \neg S) \rightarrow \neg R \text{DeMorgan}
+
+\equiv (\neg W \lor S) \rightarrow \neg R \text{Negation law}
+
+\equiv (S \lor \neg W) \rightarrow \neg R \text{Commutative property of disjunctions}
+$
+Hence a) is equivalent to e)
+
+b) 
+Converse of a) 
+$
+(W \land \neg S) \rightarrow R
+
+$
+
+c) 
+Same as a)
+$
+R \rightarrow (W \land \neg S)
+
+$
+
+d) 
+Converse of a)
+$
+(W \land \neg S) \leftrightarrow R
+
+$
+
+e) 
+Contrapositive of a) i.e. equivalent to a)
+$
+(S \lor \neg W) \rightarrow \neg R
+
+R \rightarrow \neg (S \lor \neg W) \text{Contrapositive law}
+
+R \rightarrow (\neg S \land W) \text{DeMorgen + Negation law}
+
+R \rightarrow (W \land \neg S) \text{Associative Law}
+$
+
+f) 
+Equivalent to a)
+$
+(R \rightarrow W) \land (R \rightarrow \neg S)
+
+\equiv (\neg R \lor W) \land (\neg R \lor \neg S) \text{Conditional law}
+
+\equiv \neg R or (W \land \neg S) \text{Distributive law}
+
+\equiv \neg R \rightarrow (W \land \neg S) \text{Conditiona law}
+$
+
+g) 
+Converse of a)
+$
+(W \rightarrow R) \lor (\neg S \rightarrow R)
+
+\equiv (\neg W \lor R) \lor (S \lor R) \text{condtional + negation law}
+
+\equiv (\neg W \lor S) \lor (R \lor R) \text{commutative + associative property}
+
+\equiv \neg(W \land \neg S) \lor R \text{DeMorgan + Idempotent}
+
+\equiv (W \land S) \rightarrow R \text{Conditional law}
+$
+
+### 1.5.4 - do c)!
+a) This argument is valid
+We present the argument in statement form 
+$
+\text{P1:} S \lor E
+
+\text{P2:} S \rightarrow H
+
+\text{P3:} E \rightarrow \neg H
+
+\text{C:} \neg S \land \neg E
+$
+
+$S$| $E$ | $H$ | $ S \lor E$ | $S \rightarrow H$ | $E \rightarrow \neg H$ | $\neg (S \land E)$ |
+--|---|---|-------------|------------------|-----------------------|-------------------|
+F | F | F | F | T | T | T |
+F | F | T | F | T | T | T |
+F | T | F | T | T | T | T |
+F | T | T | T | T | F | T |
+T | F | F | T | F | T | T |
+T | F | T | T | T | T | T | 
+T | T | F | T | F | T | F |
+T | T | T | T | T | F | F |
+
+b) This argument is valid
+I should have abbreviated this table. 
+$T$ | $U$ | $R$ | $G$ | $(T \land U) \rightarrow R$ | $G \rightarrow \neg R$ | $G \land T$ | $\neg U$ |  
+F   | F   | F   | F   | T                           | T                      | F           | T
+F   | F   | F   | T   | T                           | T                      | F           | T
+F   | F   | T   | F   | T                           | T                      | F           | T
+F   | F   | T   | T   | T                           | F                      | F           | T
+F   | T   | F   | F   | T                           | T                      | F           | F
+F   | T   | F   | T   | T                           | T                      | F           | F
+F   | T   | T   | F   | T                           | T                      | F           | F
+F   | T   | T   | T   | T                           | F                      | F           | F 
+T   | F   | F   | F   | T                           | T                      | F           | T
+T   | F   | F   | T   | T                           | T                      | T           | T
+T   | F   | T   | F   | T                           | F                      | F           | T
+T   | F   | T   | T   | T                           | F                      | T           | T
+T   | T   | F   | F   | F                           | T                      | F           | T
+T   | T   | F   | T   | F                           | T                      | T           | T
+T   | T   | T   | F   | T                           | T                      | F           | T
+T   | T   | T   | T   | T                           | F                      | T           | T
+c) Invalid - observe row 1
+$W$|$P$|$R$| $W \leftrightarrow (P \land \neg R)$ | $W \leftrightarrow R$ |
+F  |F | F | T | T |
+F | F | T | T | F |
+F | T | F | F | T |
+F | T | T | T | F |
+T | F | F | F | F |
+T | F | T | F | T |
+T | T | F | T | F |
+T | T | T | F | T |
+
+
+### 1.5.5 - DO LAST!
+a)
+$C$|$P$|$T$|
+
+b) 
+$D$|$R$|$B$|
+
 ### 1.5.6
-### 1.5.7
+a) Let S be the statement $P \leftrightarrow Q$. 
+We show by direct proof that S is equivalent to $(P \land Q) \lor (\neg P \land \neg Q)$
+
+$
+(P \leftrightarrow Q)
+
+\equiv (P \rightarrow Q) \land (Q \rightarrow P) \text{Definition of bicondtional}
+
+\equiv (\neg P \lor Q) \land (\neg Q \lor P) \text{Conditional law}
+
+\equiv (\neg P \land \neg Q) \lor (P \land \neg P) \lor (Q \land \neg Q) \lor (P \land Q) \text{Distributive law}
+
+\equiv (\neg P \land \neg Q) \lor F \lor F \lor (P \land Q) \text{Negation law}
+
+\equiv (\neg P \land \neg Q) \lor (P \land Q) \text{Identity law}
+
+\equiv (P \land Q) \lor (\neg P \land \neg Q) \text{Commutative law}
+$
+
+b) Let S be the statement $(P \rightarrow Q) \lor (P \rightarrow R)$. 
+We show by direct proof that this is equivalent to $(P \rightarrow (Q \lor R))$
+$
+(P \rightarrow Q) \lor (P \rightarrow R)
+
+\equiv (\neg P \lor Q) \lor (\neg P \lor R) \text{Conditional law}
+
+\equiv (\neg P \lor \neg P) \lor (Q \lor R) \text{Associative law + Commutative law}
+
+\equiv \neg P \lor (Q \lor R) \text{Idempotent law}
+
+\equiv P \rightarrow (Q \lor R) \text{Condtional law}
+$
+
+### 1.5.7 - NOT DONE
+a) 
+Let S be the statement $(P \rightarrow R) \land (Q \rightarrow R)$. 
+We show by direct proof that S is equivalent to $(P \lor Q) \rightarrow R$
+$
+(P \rightarrow R) \land (Q \rightarrow R)
+
+\equiv (\neg P \lor R) \land (\neg Q \lor R) \text{Conditional law}
+
+\equiv R \lor (\neg P \land \neg Q) \text{Distributive law}
+
+\equiv \neg(P \lor Q) \lor R \text{Commutative law}
+
+\equiv (P \lor Q) \rightarrow R \text{Conditional law}
+$
+
+b) Leave as exercise?
+
 ### 1.5.8
+a) Shown by truth table
+P | Q | R | $(P \rightarrow Q) \land (Q \rightarrow R)$ |$(P \rightarrow R) \land [(P \leftrightarrow Q) \lor (R \leftrightarrow Q)]$|
+F | F | F | T | T
+F | F | T | T | T
+F | T | F | F | F
+F | T | T | T | T
+T | F | F | F | F
+T | F | T | F | F
+T | T | F | F | F
+T | T | T | T | T
+b) 
+$
+(P \rightarrow Q) \lor (Q \rightarrow R)
+
+\equiv (\neg P \lor Q) \lor (\neg Q \lor R) \text{Conditional law}
+
+\equiv (\neg P) (Q \lor \neg Q) \lor (R) \text{Associative law}
+
+\equiv T \text{Tautology law}
+$
 ### 1.5.9
+P | Q | $P \land Q$ | $\neg (P \rightarrow \neg Q)$ | 
+F | F | F | F |
+F | T | F | F |
+T | F | F | F |
+T | T | T | T |
 ### 1.5.10
+P | Q | $P \leftrightarrow Q$ | $$ |
+F | F | T | 
+F | T | F |
+T | F | F |
+T | T | T |
 ### 1.5.11
 ### 1.5.12
