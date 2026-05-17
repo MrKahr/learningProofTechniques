@@ -1078,12 +1078,30 @@ T | T | F | T | F |
 T | T | T | F | T |
 
 
-### 1.5.5 - DO LAST!
+### 1.5.5 
 a)
-$C$|$P$|$T$|
+$C$|$P$|$T$|$C \rightarrow P$ | $T \rightarrow P$ | $\neg T \rightarrow \neg P$|
+F | F | F | T | T | T |
+F | F | T | T | F | T |
+F | T | F | T | T | F |
+F | T | T | T | T | T |
+T | F | F | F | T | T |
+T | F | T | F | F | T |
+T | T | F | T | F | F |
+T | T | T | T | T | T |
+Line 3 of truth table show that argument is invalid
 
 b) 
-$D$|$R$|$B$|
+$D$|$R$|$B$| $(D \land \neg R) \lor (\neg D \land R)$ | $B \rightarrow D$ | $R \rightarrow \neg B$
+F | F | F | F | T | T
+F | F | T | F | F | T
+F | T | F | T | T | T
+F | T | T | T | F | F
+T | F | F | T | T | T
+T | F | T | T | T | T
+T | T | F | F | T | T
+T | T | T | F | T | F
+This argument is valid! 
 
 ### 1.5.6
 a) Let S be the statement $P \leftrightarrow Q$. 
@@ -1158,17 +1176,43 @@ $
 
 \equiv T \text{Tautology law}
 $
-### 1.5.9
+### 1.5.9 
+Use this result in 1.5.10
 P | Q | $P \land Q$ | $\neg (P \rightarrow \neg Q)$ | 
 F | F | F | F |
 F | T | F | F |
 T | F | F | F |
 T | T | T | T |
 ### 1.5.10
-P | Q | $P \leftrightarrow Q$ | $$ |
-F | F | T | 
-F | T | F |
-T | F | F |
-T | T | T |
+P | Q |$P \rightarrow Q$ | $Q \rightarrow P$ | $P \leftrightarrow Q$ | $(P \rightarrow Q) \rightarrow \neg (Q \rightarrow P)$ |
+F | F | T | T | T | 
+F | T | T | F | F | 
+T | F | F | T | F | 
+T | T | T | T | T | 
 ### 1.5.11
+a) 
+P | Q | $(P \lor Q) \leftrightarrow Q$ | $P \rightarrow Q$ |
+F | F | T | T |
+F | T | T | T |
+T | F | F | F |
+T | T | T | T |
+b)
+P | Q | $(P \land Q) \leftrightarrow Q$ | $Q\rightarrow P$ |
+F | F | T | T |
+F | T | F | F |
+T | F | T | T |
+T | T | T | T |
+
 ### 1.5.12
+P | Q | R | A | B | C | D | E |
+F | F | F | T | T | T | T | T |
+F | F | T | T | T | T | T | T |
+F | T | F | T | T | T | T | T |
+F | T | T | T | T | T | T | T |
+T | F | F | T | T | F | T | F |
+T | F | T | T | T | F | T | F |
+T | T | F | F | F | F | F | F |
+T | T | T | T | T | T | T | T |
+
+a), b), d) are equivalent 
+c) and e) are equivalent
