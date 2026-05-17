@@ -202,3 +202,81 @@ Validity determines whether a conclusion follows from premises - i.e. whether th
 
 There are two kinds of variables, one numeric (e.g. x) and one boolean (e.g. S,Q). 
 
+### Conditional connective (if then)
+#### Useful terms
+- Antecedent: P
+- Consequent: Q
+- Converse: $Q \rightarrow P$
+- Contrapositive: $\neg Q \rightarrow \neg P$
+Note that $P \rightarrow Q \equiv \neg Q \rightarrow P$
+
+#### Truth table 
+P | Q | $P \rightarrow Q$ |
+F | F | T              |
+F | T | T              |
+T | F | F              |
+T | T | T              |
+
+### Why is the conditional connective defined this way?
+0) We need to encode into the semantics of $P \rightarrow Q$ that for all x, $P(x) \land \neg Q(x)$ should never be true for any choice of x.
+1)The definition does not violate what we consider well-formed arguments. .
+
+Consider the following argument
+- $P\rightarrow Q$ - Premise
+- P - Premise 
+- Q - Conclusion
+
+If e.g. we change the second of row the truth table for implication, we defined the following semantics for this argument
+P | Q | $P \rightarrow Q$ | P | Q |
+F | F | T              | F | F |
+F | T | T              | F | T |
+T | F | F              | T | F |
+T | T | T              | T | T |
+
+If we the truth value for $P \rightarrow Q$ in the first row of the table to F, then the premise $P$ would no longer be needed to determine the truth of Q-
+
+
+In other words, we allow arguments such as the following to be valid: 
+If John is in jail, then he is guilty of murder
+John is in jail
+John is guilty
+
+
+### Laws - verify them by examning their truth tables
+$
+P \rightarrow Q \equiv \neg P \lor Q \text{Conditional law}
+
+P \rightarrow Q \equiv \neg (P \land \neg Q) \text{Conditional law}
+
+P \rightarrow Q \equiv \neg Q \rightarrow \neg P \text{Contrapositive law}
+$
+
+
+### Mapping of conditional connective to natural language
+- "If P then Q" - $P \rightarrow Q$ - sufficient
+- "P only if Q" - $P \rightarrow Q$ - necessary
+- "P is sufficient for Q" - $P \rightarrow Q$ 
+- "Q is necessary for P" - $P \rightarrow Q$. HINT: equivalent to $\neg Q \rightarrow \neg P$. 
+
+### Biconditional 
+#### Truth table
+P | Q | $P \leftrightarrow Q$ |
+F | F | T                     |
+F | T | F                     |
+T | F | F                     |
+T | T | T                     |
+
+#### Why is the biconditional connective defined this way?
+We want to encode that both $P \rightarrow Q$ and $Q \rightarrow P$ are both true.
+
+### Laws
+$
+P \leftrightarrow Q \equiv (P \rightarrow Q) \land (Q \rightarrow P) \text{Biconditional law}
+$
+
+### Mapping of biconditional connective to naturual language
+"Iff P then Q" - $P \leftrightarrow Q$
+"P if and only if Q" - $P \leftrightarrow Q$
+"P is necessary and sufficient for Q" - $P \leftrightarrow Q$
+
+
