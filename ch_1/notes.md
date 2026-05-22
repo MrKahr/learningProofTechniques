@@ -127,10 +127,11 @@ These laws can be verified by using truth tables - skipped for laws completed pr
 | T | T | T | T                    | T                               |
 
 ### Variable 
-A variable is a symbolic represention of a number and can be used in predicates e.g. P(x) or D(x,y). Statements that contain variables can be combined using logical connectives e.g. $D(x,y) \lor D(x,z)$. 
+A variable is a symbolic represention that can be used to represent an arbitary element. Variables be used in predicates e.g. P(x) or D(x,y). Statements that contain variables can be combined using logical connectives e.g. $D(x,y) \lor D(x,z)$. 
 
 ### Free and bound variables
-Free variables are objects that a statement says something about and can change the truth value of a statement depending on choice of variable. Bound or dummy variables help express an idea about a set and should not be thought of as any particular object. Bound variables can always be replaced without changing the meaning of a statement. 
+Free variables are variables that are not bound in the scope of some operator. In logic, we often think of variables being bound by quantifers.
+x is a free variable in $P(x) \lor Q(x)$, but it is a bound variable in $\forall x P(x) \lor Q(x)$ because the quantifier $\forall$ binds the variable x.
 
 ## Set theory 
 ### A set 
@@ -253,8 +254,8 @@ $
 
 
 ### Mapping of conditional connective to natural language
-- "If P then Q" - $P \rightarrow Q$ - sufficient
-- "P only if Q" - $P \rightarrow Q$ - necessary
+- "If P then Q" - $P \rightarrow Q$ - P is sufficient for Q
+- "P only if Q" - $P \rightarrow Q$ - Q is necessary for P
 - "P is sufficient for Q" - $P \rightarrow Q$ 
 - "Q is necessary for P" - $P \rightarrow Q$. HINT: equivalent to $\neg Q \rightarrow \neg P$. 
 
