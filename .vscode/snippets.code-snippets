@@ -85,5 +85,13 @@
 	"biimplies":{
 		"prefix": "biimplies",
 		"body": "\\leftrightarrow"
+	},
+	"forall":{
+		"prefix": "forall",
+		"body": "\\forall"
+	},
+	"exists":{
+		"prefix": "exists",
+		"body": "\\exists"
 	}
 }
