@@ -22,4 +22,4 @@ $\neg \forall x P(x) \equiv \exists x \neg P(x)$
 
 Combined with other equivalences, laws (including DeMorgan), we can begin to negative statements as equivalent positive statements.
 
-## Set theory
+## Set theory (and how it is used with quantifiers!)
