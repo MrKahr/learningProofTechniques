@@ -51,14 +51,51 @@ c) It is not the case that a and b have solutions
 False, b: x = 1
 
 ### 2.1.7
-a) 
-b)
-c)
-d)
-e)
+a) There is a universal parent of everyone - FALSE 
+
+b) Everyone is a parent of someone - FALSE
+
+c) There are no parents of anyone- FALSE
+
+d) Someone is childless - TRUE
+
+e) Someone is not a parent of someone else - TRUE
 
 ### 2.1.8
+a) True, base case x = 1, y = 2 
+
+b) False, let x = n, let y = n + 1
+
+c) False, let x = 1 
+
+d) True, base case x = 9
+
+e) True, choose x = 49, y = 51 
+
+f) False, let x = 100
 
 ### 2.1.9
+a) True
+
+b) False
+
+c) True
+
+d) False 
+
+e) True 
+
+f) True
 
 ### 2.1.10
+a) True 
+
+b) False
+
+c) False
+
+d) True 
+
+e) True 
+
+f) True 
